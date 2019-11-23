@@ -1,8 +1,15 @@
 import React from 'react';
 import { Toolbar } from './Toolbar';
-import { shallow } from 'enzyme';
+import { shallow, ShallowWrapper } from 'enzyme';
 
-it('renders toolbar', () => {
-	const div = shallow(<Toolbar />);
-	expect(div.find('button').text()).toContain('New');
+describe('Toolbar', () => {
+	let toolbar: ShallowWrapper;
+
+	beforeEach(() => {
+		toolbar = shallow(<Toolbar />);
+	});
+
+	it('renders toolbar', () => {
+		expect(toolbar.find('button').text()).toContain('New');
+	});
 });

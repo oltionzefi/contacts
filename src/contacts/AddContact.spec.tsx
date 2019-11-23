@@ -1,8 +1,15 @@
-import * as React from 'react';
-import { shallow } from 'enzyme';
+import React from 'react';
+import { shallow, ShallowWrapper } from 'enzyme';
 import { AddContact } from './AddContact';
 
-it('should create', () => {
-	const wrapper = shallow(<AddContact />);
-	expect(wrapper.find('div').text()).toBe('Adding contact');
+describe('AddContacts', () => {
+	let addContact: ShallowWrapper;
+
+	beforeEach(() => {
+		addContact = shallow(<AddContact />);
+	});
+
+	it('renders addContact', () => {
+		expect(addContact.find('div').text()).toBe('Adding contact');
+	});
 });

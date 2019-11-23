@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
 import { IButtonProps } from 'office-ui-fabric-react/lib/Button';
 

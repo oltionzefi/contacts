@@ -1,11 +1,20 @@
 import React from 'react';
 import './App.css';
-import { Toolbar } from './toolbar/Toolbar';
 import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
+import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
+import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { Navbar } from './navbar';
+import { Content } from './content';
+import { Sidebar } from './sidebar';
+import { Footer } from './footer';
 
+/**
+ * Loading the theme
+ * @TODO optional theme
+ */
 loadTheme({
 	palette: {
-		themePrimary: '#0078d4',
+		themePrimary: '#ddd000',
 		themeLighterAlt: '#eff6fc',
 		themeLighter: '#deecf9',
 		themeLight: '#c7e0f4',
@@ -30,12 +39,33 @@ loadTheme({
 	}
 });
 
-const App: React.FC = () => {
-	return (
-		<div>
-			<Toolbar />
-		</div>
-	);
-};
+/**
+ * By default icons are not loaded
+ * @see https://github.com/OfficeDev/office-ui-fabric-react/wiki/Using-icons
+ */
+initializeIcons();
+
+class App extends React.Component {
+	render() {
+		return (
+			<Fabric className="App">
+				<div className="header">
+					<Navbar />
+				</div>
+				<div className="body">
+					<div className="content">
+						<Content />
+					</div>
+					<div className="sidebar">
+						<Sidebar />
+					</div>
+				</div>
+				<div className="footer">
+					<Footer />
+				</div>
+			</Fabric>
+		);
+	}
+}
 
 export default App;

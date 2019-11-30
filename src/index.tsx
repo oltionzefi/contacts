@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { i18n } from '@lingui/core';
 import { I18nProvider } from '@lingui/react';
 import { defaultLocale, loadMessages } from './i18n';
 

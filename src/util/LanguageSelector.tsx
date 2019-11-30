@@ -1,7 +1,5 @@
 import React from 'react';
-import { t } from '@lingui/macro';
-import { i18n, MessageDescriptor } from '@lingui/core';
-import { Trans } from '@lingui/react';
+import { i18n } from '@lingui/core';
 
 interface LanguageTuple {
 	key: string;

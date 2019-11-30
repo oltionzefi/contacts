@@ -1,0 +1,6 @@
+{
+	"contacts.sidebar.placeholder": {
+		"defaults": "Sidebar",
+		"origin": [["src/sidebar/Sidebar.tsx", 5]]
+	}
+}

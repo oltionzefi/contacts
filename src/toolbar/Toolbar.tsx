@@ -1,6 +1,8 @@
 import React from 'react';
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
 import { IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import { I18n } from '@lingui/react';
+import { t } from '@lingui/macro';
 
 const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
 
@@ -90,13 +92,21 @@ const farItems: ICommandBarItemProps[] = [
 export const Toolbar: React.FC = () => {
 	return (
 		<div>
-			<CommandBar
-				items={toolbarItems}
-				overflowItems={overflowItems}
-				overflowButtonProps={overflowProps}
-				farItems={farItems}
-				ariaLabel="Use left and right arrow keys to navigate between commands"
-			/>
+			<I18n>
+				{({ i18n }) => (
+					<CommandBar
+						items={toolbarItems}
+						overflowItems={overflowItems}
+						overflowButtonProps={overflowProps}
+						farItems={farItems}
+						ariaLabel={i18n._(
+							t(
+								'contacts.toolbar.aria-label'
+							)`Use left and right arrow keys to navigate between commands`
+						)}
+					/>
+				)}
+			</I18n>
 		</div>
 	);
 };

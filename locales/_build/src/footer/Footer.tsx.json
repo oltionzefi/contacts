@@ -1,0 +1,6 @@
+{
+	"contacts.footer.placeholder": {
+		"defaults": "Footer",
+		"origin": [["src/footer/Footer.tsx", 5]]
+	}
+}

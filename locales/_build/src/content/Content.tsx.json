@@ -1,0 +1,6 @@
+{
+	"contacts.content.placeholder": {
+		"defaults": "Content",
+		"origin": [["src/content/Content.tsx", 5]]
+	}
+}

@@ -7,6 +7,7 @@ import { Navbar } from './navbar';
 import { Content } from './content';
 import { Sidebar } from './sidebar';
 import { Footer } from './footer';
+import { LanguageSelector } from './util/LanguageSelector';
 
 /**
  * Loading the theme
@@ -45,27 +46,26 @@ loadTheme({
  */
 initializeIcons();
 
-class App extends React.Component {
-	render() {
-		return (
-			<Fabric className="App">
-				<div className="header">
-					<Navbar />
+function App({ language, onLanguageChange }: any) {
+	return (
+		<Fabric className="App">
+			<div className="header">
+				<Navbar />
+				<LanguageSelector language={language} onChangeLangage={onLanguageChange} />
+			</div>
+			<div className="body">
+				<div className="content">
+					<Content />
 				</div>
-				<div className="body">
-					<div className="content">
-						<Content />
-					</div>
-					<div className="sidebar">
-						<Sidebar />
-					</div>
+				<div className="sidebar">
+					<Sidebar />
 				</div>
-				<div className="footer">
-					<Footer />
-				</div>
-			</Fabric>
-		);
-	}
+			</div>
+			<div className="footer">
+				<Footer />
+			</div>
+		</Fabric>
+	);
 }
 
 export default App;

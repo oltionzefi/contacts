@@ -1,0 +1,6 @@
+{
+	"contacts.toolbar.aria-label": {
+		"defaults": "Use left and right arrow keys to navigate between commands",
+		"origin": [["src/toolbar/Toolbar.tsx", 89]]
+	}
+}

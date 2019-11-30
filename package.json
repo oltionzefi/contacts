@@ -4,18 +4,16 @@
   "private": true,
   "dependencies": {
     "@datorama/akita": "^4.14.1",
+    "@lingui/loader": "^2.8.3",
+    "@lingui/react": "^2.8.3",
     "@types/jest": "24.0.23",
     "@types/node": "12.12.11",
     "@types/react": "16.9.12",
     "@types/react-dom": "16.9.4",
     "formik": "^2.0.6",
-    "i18next": "^19.0.1",
-    "i18next-browser-languagedetector": "^4.0.1",
-    "i18next-fetch-backend": "^2.2.0",
     "office-ui-fabric-react": "^7.64.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-i18next": "^11.2.2",
     "react-scripts": "3.2.0",
     "rxjs": "^6.5.3",
     "typescript": "3.7.2"
@@ -23,6 +21,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract",
+    "compile": "lingui compile",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -42,8 +43,15 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@lingui/cli": "^2.8.3",
+    "@lingui/macro": "^2.8.3",
     "@types/enzyme": "^3.10.3",
     "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/lingui__macro": "^2.7.3",
+    "@types/lingui__react": "^2.8.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-plugin-macros": "^2.7.1",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "husky": "^3.1.0",

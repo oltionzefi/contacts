@@ -1,0 +1,30 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2019-11-30 10:29+0100\n"
+"Mime-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: de\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#: src/content/Content.tsx:5
+msgid "contacts.content.placeholder"
+msgstr "Inhalt"
+
+#: src/footer/Footer.tsx:5
+msgid "contacts.footer.placeholder"
+msgstr "Fußzeile"
+
+#: src/sidebar/Sidebar.tsx:5
+msgid "contacts.sidebar.placeholder"
+msgstr "Seitenleiste"
+
+#: src/toolbar/Toolbar.tsx:89
+msgid "contacts.toolbar.aria-label"
+msgstr "Verwenden Sie nach links und rechts Pfeiltasten zwischen den Befehlen navigieren"

@@ -1,5 +1,9 @@
 import React from 'react';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
-export const Sidebar: React.FC = () => {
-	return <div>Sidebar</div>;
+const SidebarComponent = (props: WithTranslation) => {
+	const { t } = props;
+	return <div>{t('contact.sidebar.placeholder')}</div>;
 };
+
+export const Sidebar = withTranslation()(SidebarComponent);

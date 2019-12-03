@@ -1,5 +1,9 @@
 import React from 'react';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
-export const Footer: React.FC = () => {
-	return <div>Footer</div>;
+const FooterComponent = (props: WithTranslation) => {
+	const { t } = props;
+	return <div>{t('contact.footer.placeholder')}</div>;
 };
+
+export const Footer = withTranslation()(FooterComponent);

@@ -7,6 +7,7 @@ import { Navbar } from './navbar';
 import { Content } from './content';
 import { Sidebar } from './sidebar';
 import { Footer } from './footer';
+import LanguageSelector from './util/LanguageSelector';
 
 /**
  * Loading the theme
@@ -51,6 +52,7 @@ class App extends React.Component {
 			<Fabric className="App">
 				<div className="header">
 					<Navbar />
+					<LanguageSelector />
 				</div>
 				<div className="body">
 					<div className="content">

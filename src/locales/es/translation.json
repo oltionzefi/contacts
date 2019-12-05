@@ -1,6 +1,24 @@
 {
-	"contact.footer.placeholder": "Página",
-	"contact.content.placeholder": "Descripción",
-	"contact.sidebar.placeholder": "Barra lateral",
-	"contacts.toolbar.aria-label": "Use las teclas de flecha izquierda y derecha para navegar entre comandos???"
+	"contacts.footer.placeholder": "Página",
+	"contacts.content.placeholder": "Descripción",
+	"contacts.sidebar.placeholder": "Barra lateral",
+	"contacts.toolbar.aria-label": "Use las teclas de flecha izquierda y derecha para navegar entre comandos???",
+	"contacts.add_contact.placeholder": "Agregar contacto",
+	"contacts.contacts.placeholder": "Contactos",
+	"contacts.menu.main.info": "Informacion",
+	"contacts.menu.main.gridview": "Vista en cuadrícula",
+	"contacts.menu.main.rename": "Rebautizar",
+	"contacts.menu.main.copy": "Copiar",
+	"contacts.menu.main.move": "Mover",
+	"contacts.menu.main.download": "Descargar",
+	"contacts.menu.main.share": "Compartir",
+	"contacts.menu.main.upload": "Cargar",
+	"contacts.menu.main.calendarevent": "Evento de calendario",
+	"contacts.menu.main.emailmessage": "Mensaje de correo electrónico",
+	"contacts.menu.main.new": "Nuevo",
+	"en": "Inglés",
+	"de": "Alemán",
+	"fr": "Francés",
+	"es": "Español",
+	"it": "Italiano"
 }

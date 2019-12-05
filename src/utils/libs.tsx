@@ -9,9 +9,9 @@ export const translateItems = (props: WithTranslation) => (
 	return items.map((item: ICommandBarItemProps) => {
 		item = translate(t)(item);
 
-		if (item.items) {
-			let subs = item.items;
-			let updateSubs = subs.map(translate);
+		if (item.subMenuProps) {
+			let subs = item.subMenuProps.items;
+			let updateSubs = subs.map(translate(t));
 
 			item.items = updateSubs;
 		}

@@ -1,1 +1,24 @@
-{}
+{
+	"contacts.content.placeholder": "Il contenuto",
+	"contacts.footer.placeholder": "Footer",
+	"contacts.sidebar.placeholder": "Sidebar",
+	"contacts.toolbar.aria-label": "Barra degli strumenti",
+	"contacts.add_contact.placeholder": "Aggiungi contatti",
+	"contacts.contacts.placeholder": "Contatti",
+	"contacts.menu.main.info": "Informazioni",
+	"contacts.menu.main.gridview": "Visualizzazione griglia",
+	"contacts.menu.main.rename": "Rinominare",
+	"contacts.menu.main.copy": "Copia",
+	"contacts.menu.main.move": "Mossa",
+	"contacts.menu.main.download": "Scaricare",
+	"contacts.menu.main.share": "Condividere",
+	"contacts.menu.main.upload": "Caricare",
+	"contacts.menu.main.calendarevent": "Evento del calendario",
+	"contacts.menu.main.emailmessage": "Messaggio email",
+	"contacts.menu.main.new": "Nuova",
+	"en": "Inglese",
+	"de": "Tedesco",
+	"fr": "Francese",
+	"es": "Spagnolo",
+	"it": "Italiano"
+}

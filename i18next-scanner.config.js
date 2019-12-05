@@ -1,35 +1,20 @@
-var typescriptTransform = require('i18next-scanner-typescript');
+const typescriptTransform = require('i18next-scanner-typescript');
 
 module.exports = {
-	input: [
-		'src/**/*.{js,jsx,ts,tsx}',
-		'!src/**/*.spec.{js,jsx,ts,tsx}',
-		'!src/locales/**',
-		'!**/node_modules/**'
-	],
+	input: ['src/**/*.{js,jsx,ts,tsx}', '!src/locales/**', '!**/node_modules/**'],
 	options: {
 		debug: true,
 		func: {
-			list: ['i18next.t', 'i18n.t'],
+			list: ['i18next.t', 'i18n.t', 't'],
 			extensions: ['.tsx', '.ts', '.js', '.jsx']
 		},
 		trans: {
-			component: 'Trans',
-			i18nKey: 'i18nKey',
-			defaultsKey: 'defaults',
-			extensions: ['.js', '.jsx', '.ts', '.tsx'],
-			fallbackKey: function(ns, value) {
-				return value;
-			},
-			acorn: {
-				ecmaVersion: 10, // defaults to 10
-				sourceType: 'module' // defaults to 'module'
-				// Check out https://github.com/acornjs/acorn/tree/master/acorn#interface for additional options
-			}
+			component: 'Trans'
 		},
 		lngs: ['en', 'fr', 'es', 'de', 'it'],
 		ns: ['translation'],
 		defaultLng: 'en',
+		// removeUnusedKeys: true, // Don't use this if you want menu to be translated
 		defaultNs: 'translation',
 		defaultValue: (lng, ns, key) => '',
 		resource: {
@@ -38,8 +23,8 @@ module.exports = {
 			jsonIndent: 2,
 			lineEnding: '\n'
 		},
-		nsSeparator: ':',
-		keySeparator: '.'
+		nsSeparator: false, // namespace separator
+		keySeparator: false // key separator
 	},
 	transform: typescriptTransform({ extensions: ['.tsx'] })
 };

@@ -1,6 +1,24 @@
 {
-	"contact.footer.placeholder": "Bas de page",
-	"contact.content.placeholder": "Teneur",
-	"contact.sidebar.placeholder": "Barre latérale",
-	"contacts.toolbar.aria-label": "Utilisez les flèches gauche et droite pour naviguer entre les commandes"
+	"contacts.footer.placeholder": "Bas de page",
+	"contacts.content.placeholder": "Teneur",
+	"contacts.sidebar.placeholder": "Barre latérale",
+	"contacts.toolbar.aria-label": "Utilisez les flèches gauche et droite pour naviguer entre les commandes",
+	"contacts.add_contact.placeholder": "Ajouter un contact",
+	"contacts.contacts.placeholder": "Contacts",
+	"contacts.menu.main.info": "Info",
+	"contacts.menu.main.gridview": "Vue de la grille",
+	"contacts.menu.main.rename": "Renommer",
+	"contacts.menu.main.copy": "Copier",
+	"contacts.menu.main.move": "Déplacer",
+	"contacts.menu.main.download": "Télécharger",
+	"contacts.menu.main.share": "Partager",
+	"contacts.menu.main.upload": "Télécharger",
+	"contacts.menu.main.calendarevent": "Evénement de calendrier",
+	"contacts.menu.main.emailmessage": "Message électronique",
+	"contacts.menu.main.new": "Nouveau",
+	"en": "Anglais",
+	"de": "Allemand",
+	"fr": "Français",
+	"es": "Espanol",
+	"it": "Italien"
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import './App.css';
 import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
@@ -7,7 +7,7 @@ import { Navbar } from './navbar';
 import { Content } from './content';
 import { Sidebar } from './sidebar';
 import { Footer } from './footer';
-import LanguageSelector from './util/LanguageSelector';
+import LanguageSelector from './language/LanguageSelector';
 
 /**
  * Loading the theme
@@ -49,23 +49,25 @@ initializeIcons();
 class App extends React.Component {
 	render() {
 		return (
-			<Fabric className="App">
-				<div className="header">
-					<Navbar />
-					<LanguageSelector />
-				</div>
-				<div className="body">
-					<div className="content">
-						<Content />
+			<Suspense fallback={<div>Loading... </div>}>
+				<Fabric className="App">
+					<div className="header">
+						<Navbar />
+						<LanguageSelector />
 					</div>
-					<div className="sidebar">
-						<Sidebar />
+					<div className="body">
+						<div className="content">
+							<Content />
+						</div>
+						<div className="sidebar">
+							<Sidebar />
+						</div>
 					</div>
-				</div>
-				<div className="footer">
-					<Footer />
-				</div>
-			</Fabric>
+					<div className="footer">
+						<Footer />
+					</div>
+				</Fabric>
+			</Suspense>
 		);
 	}
 }

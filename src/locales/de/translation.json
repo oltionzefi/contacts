@@ -1,6 +1,24 @@
 {
-	"contact.footer.placeholder": "Fußzeile",
-	"contact.content.placeholder": "Inhalt",
-	"contact.sidebar.placeholder": "Seitenleiste",
-	"contacts.toolbar.aria-label": "Verwenden Sie nach links und rechts Pfeiltasten zwischen den Befehlen navigieren"
+	"contacts.footer.placeholder": "Fußzeile",
+	"contacts.content.placeholder": "Inhalt",
+	"contacts.sidebar.placeholder": "Seitenleiste",
+	"contacts.toolbar.aria-label": "Verwenden Sie nach links und rechts Pfeiltasten zwischen den Befehlen navigieren",
+	"contacts.add_contact.placeholder": "Kontakt hinzufügen",
+	"contacts.contacts.placeholder": "Kontakte",
+	"contacts.menu.main.info": "Info",
+	"contacts.menu.main.gridview": "Rasteransicht",
+	"contacts.menu.main.rename": "Umbenennen",
+	"contacts.menu.main.copy": "Kopieren",
+	"contacts.menu.main.move": "Bewegung",
+	"contacts.menu.main.download": "Herunterladen",
+	"contacts.menu.main.share": "Teilen",
+	"contacts.menu.main.upload": "Hochladen",
+	"contacts.menu.main.calendarevent": "Kalenderereignis",
+	"contacts.menu.main.emailmessage": "E-Mail Nachricht",
+	"contacts.menu.main.new": "Neu",
+	"en": "Englisch",
+	"de": "Deutsche",
+	"fr": "Französisch",
+	"es": "Spanisch",
+	"it": "Italienisch"
 }

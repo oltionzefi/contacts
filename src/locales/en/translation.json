@@ -1,6 +1,24 @@
 {
-	"contact.footer.placeholder": "Footer",
-	"contact.content.placeholder": "Content",
-	"contact.sidebar.placeholder": "Sidebar",
-	"contacts.toolbar.aria-label": "Use left and right arrow keys to navigate between commands"
+	"contacts.footer.placeholder": "Footer",
+	"contacts.content.placeholder": "Content",
+	"contacts.sidebar.placeholder": "Sidebar",
+	"contacts.toolbar.aria-label": "Use left and right arrow keys to navigate between commands",
+	"contacts.add_contact.placeholder": "Add Contact",
+	"contacts.contacts.placeholder": "Contacts",
+	"contacts.menu.main.info": "Info",
+	"contacts.menu.main.gridview": "Grid view",
+	"contacts.menu.main.rename": "Rename",
+	"contacts.menu.main.copy": "Copy",
+	"contacts.menu.main.move": "Move",
+	"contacts.menu.main.download": "Download",
+	"contacts.menu.main.share": "Share",
+	"contacts.menu.main.upload": "Upload",
+	"contacts.menu.main.calendarevent": "Calendar Event",
+	"contacts.menu.main.emailmessage": "Email Message",
+	"contacts.menu.main.new": "New",
+	"en": "English",
+	"de": "German",
+	"fr": "French",
+	"es": "Spanish",
+	"it": "Italian"
 }

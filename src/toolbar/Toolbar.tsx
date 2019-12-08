@@ -12,26 +12,13 @@ const toolbarItems: ICommandBarItemProps[] = [
 		key: 'contacts.menu.main.new',
 		cacheKey: 'newContact', // changing this key will invalidate this item's cache
 		iconProps: { iconName: 'Add' },
-		subMenuProps: {
-			items: [
-				{
-					text: 'Email message',
-					key: 'contacts.menu.main.emailmessage',
-					iconProps: { iconName: 'Mail' }
-				},
-				{
-					text: 'Calendar event',
-					key: 'contacts.menu.main.calendarevent',
-					iconProps: { iconName: 'Calendar' }
-				}
-			]
-		}
+		href: 'new'
 	},
 	{
 		text: 'Upload',
 		key: 'contacts.menu.main.upload',
 		iconProps: { iconName: 'Upload' },
-		onClick: () => console.log('Upload')
+		href: 'upload'
 	},
 	{
 		text: 'Share',

@@ -20,5 +20,6 @@
 	"de": "Deutsche",
 	"fr": "Französisch",
 	"es": "Spanisch",
-	"it": "Italienisch"
+	"it": "Italienisch",
+	"contacts.upload.placeholder": "Hochladen"
 }

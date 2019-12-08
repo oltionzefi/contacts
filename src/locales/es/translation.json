@@ -20,5 +20,6 @@
 	"de": "Alemán",
 	"fr": "Francés",
 	"es": "Español",
-	"it": "Italiano"
+	"it": "Italiano",
+	"contacts.upload.placeholder": "Cargar"
 }

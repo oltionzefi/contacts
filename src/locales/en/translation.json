@@ -20,5 +20,6 @@
 	"de": "German",
 	"fr": "French",
 	"es": "Spanish",
-	"it": "Italian"
+	"it": "Italian",
+	"contacts.upload.placeholder": "Upload"
 }

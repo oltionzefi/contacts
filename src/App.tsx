@@ -2,10 +2,11 @@ import React, { Suspense } from 'react';
 import './App.css';
 import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
-import Container from './Container';
+import { Container } from './Container';
 import { Route, BrowserRouter } from 'react-router-dom';
-import { AddContact } from './contacts';
+import { AddContact, Contacts } from './contacts';
 import { Upload } from './upload';
+
 /**
  * Loading the theme
  * @TODO optional theme
@@ -46,13 +47,15 @@ initializeIcons();
 class App extends React.Component {
 	render() {
 		return (
-			<BrowserRouter>
-				<Suspense fallback={<div>Loading... </div>}>
-					<Route path="/" exact component={Container} />
-					<Route path="/new" component={AddContact} />
-					<Route path="/upload" component={Upload} />
-				</Suspense>
-			</BrowserRouter>
+			<Container>
+				<BrowserRouter>
+					<Suspense fallback={<div>Loading... </div>}>
+						<Route path="/" exact component={Contacts} />
+						<Route path="/new" component={AddContact} />
+						<Route path="/upload" component={Upload} />
+					</Suspense>
+				</BrowserRouter>
+			</Container>
 		);
 	}
 }

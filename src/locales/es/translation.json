@@ -21,5 +21,6 @@
 	"fr": "Francés",
 	"es": "Español",
 	"it": "Italiano",
-	"contacts.upload.placeholder": "Cargar"
+	"contacts.upload.placeholder": "Cargar",
+	"contacts.contacts.add-contact": "Agregar contacto"
 }

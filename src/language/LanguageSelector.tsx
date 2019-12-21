@@ -1,57 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withTranslation, WithTranslation } from 'react-i18next';
 import { LanguageTuple } from '../types';
 import i18n from '../i18n';
+import { languageService, languageQuery } from './state';
+import { languages } from './constants';
+import { translateFunction } from './functions';
 
-/** Supported languages for language switcher */
-const languages: LanguageTuple[] = [
-	{
-		key: 'en',
-		text: 'English'
-	},
-	{
-		key: 'de',
-		text: 'German'
-	},
-	{
-		key: 'fr',
-		text: 'French'
-	},
-	{
-		key: 'es',
-		text: 'Spanish'
-	},
-	{
-		key: 'it',
-		text: 'Italian'
-	}
-];
-
-const LanguageSelector = (props: WithTranslation) => {
+/** @todo change language is not triggering change of props to be changed */
+const LanguageSelectorFunction = (props: WithTranslation) => {
 	const { t } = props;
-	const [language, setLanguage] = useState('');
+	const [language, setLanguage] = useState(languageQuery.getLanguage());
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (language) {
+			if (languageQuery.getLanguage() !== language) {
+				languageService.setLanguage(language);
+			}
 			i18n.changeLanguage(language);
 		}
 	}, [language]);
 
-	const translateItems = (languages: LanguageTuple[]) => {
-		return languages.map((language: LanguageTuple) => {
-			language = translate(language);
-			return language;
-		});
-	};
-
-	const translate = (language: LanguageTuple) => {
-		if (language.key != null) {
-			language.text = t(language.key);
-		}
-
-		return language;
-	};
-
+	const translateItems = translateFunction(t);
 	let transLanguages = translateItems(languages);
 
 	return (
@@ -70,4 +39,4 @@ const LanguageSelector = (props: WithTranslation) => {
 	);
 };
 
-export default withTranslation()(LanguageSelector);
+export const LanguageSelector = withTranslation()(LanguageSelectorFunction);

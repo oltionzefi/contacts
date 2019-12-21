@@ -8,6 +8,9 @@ import translationFR from './locales/fr/translation.json';
 import translationES from './locales/es/translation.json';
 import translationIT from './locales/it/translation.json';
 
+export const defaultLanguage = 'en';
+const supportedLanguages = ['en', 'fr', 'de', 'it', 'es'];
+
 // the translations
 const resources = {
 	en: {
@@ -31,14 +34,15 @@ i18n.use(Fetch)
 	.use(LanguageDetector)
 	.use(initReactI18next)
 	.init({
+		whitelist: supportedLanguages,
 		resources,
-		lng: 'en',
 		debug: true,
-		fallbackLng: 'en',
+		fallbackLng: defaultLanguage,
 		keySeparator: false,
 		interpolation: {
 			escapeValue: false
-		}
+		},
+		initImmediate: false
 	});
 
 export default i18n;

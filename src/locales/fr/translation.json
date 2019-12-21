@@ -21,5 +21,6 @@
 	"fr": "Français",
 	"es": "Espanol",
 	"it": "Italien",
-	"contacts.upload.placeholder": "Télécharger"
+	"contacts.upload.placeholder": "Télécharger",
+	"contacts.contacts.add-contact": "Ajouter le contact"
 }

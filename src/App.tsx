@@ -6,6 +6,7 @@ import { Container } from './Container';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { AddContact, Contacts } from './contacts';
 import { Upload } from './upload';
+import { akitaDevtools, persistState } from '@datorama/akita';
 
 /**
  * Loading the theme
@@ -43,6 +44,12 @@ loadTheme({
  * @see https://github.com/OfficeDev/office-ui-fabric-react/wiki/Using-icons
  */
 initializeIcons();
+
+akitaDevtools();
+
+persistState({
+	include: ['language.language']
+});
 
 class App extends React.Component {
 	render() {

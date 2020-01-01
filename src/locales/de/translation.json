@@ -22,5 +22,14 @@
 	"es": "Spanisch",
 	"it": "Italienisch",
 	"contacts.upload.placeholder": "Hochladen",
-	"contacts.contacts.add-contact": "Kontakt hinzufügen"
+	"contacts.contacts.add-contact": "Kontakt hinzufügen",
+	"contacts.contacts.email.required": "E-Mail ist erforderlich",
+	"contacts.contacts.email.invalid": "E-mail Adresse ist nicht korrekt!",
+	"contacts.contacts.firstname": "Vorname",
+	"contacts.contacts.lastname": "Nachname",
+	"contacts.contacts.email": "Email",
+	"contacts.contacts.phoneNumber": "Telefonnummer",
+	"contacts.contacts.submit": "Einsenden",
+	"contacts.contacts.company": "Firma",
+	"contacts.contacts.address": "Anschrift"
 }

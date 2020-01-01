@@ -22,5 +22,14 @@
 	"es": "Español",
 	"it": "Italiano",
 	"contacts.upload.placeholder": "Cargar",
-	"contacts.contacts.add-contact": "Agregar contacto"
+	"contacts.contacts.add-contact": "Agregar contacto",
+	"contacts.contacts.email.required": "Correo electronico es requerido!",
+	"contacts.contacts.email.invalid": "Dirección de correo electrónico es inválida!",
+	"contacts.contacts.firstname": "Nombre",
+	"contacts.contacts.lastname": "Apellido",
+	"contacts.contacts.email": "Email",
+	"contacts.contacts.phoneNumber": "Número de teléfono",
+	"contacts.contacts.submit": "Enviar",
+	"contacts.contacts.company": "Empresa",
+	"contacts.contacts.address": "Dirección"
 }

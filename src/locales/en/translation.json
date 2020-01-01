@@ -22,5 +22,14 @@
 	"es": "Spanish",
 	"it": "Italian",
 	"contacts.upload.placeholder": "Upload",
-	"contacts.contacts.add-contact": "Add Contact"
+	"contacts.contacts.add-contact": "Add Contact",
+	"contacts.contacts.email.required": "Email is required!",
+	"contacts.contacts.email.invalid": "Email address is invalid!",
+	"contacts.contacts.firstname": "First Name",
+	"contacts.contacts.lastname": "Last Name",
+	"contacts.contacts.email": "Email",
+	"contacts.contacts.phoneNumber": "Phone Number",
+	"contacts.contacts.submit": "Submit",
+	"contacts.contacts.company": "Company",
+	"contacts.contacts.address": "Address"
 }

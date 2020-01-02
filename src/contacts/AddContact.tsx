@@ -1,6 +1,7 @@
 import React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { contactsService } from './state';
 
 interface AddContactFormError {
 	email?: string;
@@ -32,8 +33,8 @@ const AddContactComponent = (props: WithTranslation) => {
 				}}
 				onSubmit={(values, { setSubmitting }) => {
 					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2));
-						setSubmitting(false);
+						contactsService.add(values);
+						setSubmitting(true);
 					}, 400);
 				}}
 			>

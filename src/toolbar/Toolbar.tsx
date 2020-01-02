@@ -73,6 +73,15 @@ const farItems: ICommandBarItemProps[] = [
 		iconOnly: true,
 		iconProps: { iconName: 'Info' },
 		onClick: () => console.log('Info')
+	},
+	{
+		text: 'Close',
+		key: 'contacts.menu.main.close',
+		// This needs an ariaLabel since it's icon-only
+		ariaLabel: 'Close',
+		iconOnly: true,
+		iconProps: { iconName: 'ChromeClose' },
+		href: '/'
 	}
 ];
 

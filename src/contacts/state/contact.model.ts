@@ -1,7 +1,7 @@
 import { ID, guid } from '@datorama/akita';
 
 export type Contact = {
-	ID?: ID;
+	id?: ID;
 	firstname: string;
 	lastname: string;
 	email: string;
@@ -9,7 +9,7 @@ export type Contact = {
 	phoneNumber: string;
 	address?: string;
 	picture?: string;
-	deleted: boolean;
+	deleted?: boolean;
 };
 
 export function createContact(contact: Contact) {

@@ -31,5 +31,7 @@
 	"contacts.contacts.phoneNumber": "Telefonnummer",
 	"contacts.contacts.submit": "Einsenden",
 	"contacts.contacts.company": "Firma",
-	"contacts.contacts.address": "Anschrift"
+	"contacts.contacts.address": "Anschrift",
+	"contacts.menu.main.close": "Schließen",
+	"contacts.contacts.edit": "Bearbeiten"
 }

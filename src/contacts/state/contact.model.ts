@@ -12,9 +12,8 @@ export type Contact = {
 	deleted?: boolean;
 };
 
-export function createContact(contact: Contact) {
+export function getContactData(contact: Contact) {
 	return {
-		id: guid(),
 		firstname: contact.firstname,
 		lastname: contact.lastname,
 		email: contact.email,
@@ -23,5 +22,12 @@ export function createContact(contact: Contact) {
 		address: contact.address,
 		picture: contact.picture,
 		deleted: false
+	};
+}
+
+export function createContact(contact: Contact) {
+	return {
+		id: guid(),
+		...getContactData(contact)
 	};
 }

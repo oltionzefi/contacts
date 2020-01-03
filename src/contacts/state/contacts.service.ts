@@ -1,5 +1,5 @@
 import { ContactsStore, contactsStore } from './contacts.store';
-import { Contact, createContact } from './contact.model';
+import { Contact, createContact, getContactData } from './contact.model';
 import { ID } from '@datorama/akita';
 
 export class ContactsService {
@@ -8,6 +8,10 @@ export class ContactsService {
 	add(contact: Contact) {
 		const contactData = createContact(contact);
 		this.contactsStore.add(contactData);
+	}
+
+	update(contact: Contact) {
+		this.contactsStore.update(contact.id, getContactData(contact));
 	}
 
 	delete(id: ID) {

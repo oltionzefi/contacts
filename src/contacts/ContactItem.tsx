@@ -1,10 +1,21 @@
-import React from 'react';
-import { Contact } from './state';
+import React, { useState } from 'react';
+import { Contact as Model } from './state';
 import { TFunction } from 'i18next';
+import { Contact } from './Contact';
 
-export const ContactItem: React.SFC<{ contact: Contact } & { tFunction: TFunction }> = props => {
+export const ContactItem: React.SFC<{ contact: Model } & { tFunction: TFunction }> = (
+	props: { contact: Model } & { tFunction: TFunction }
+) => {
 	const { firstname, lastname, email, picture, company, address, phoneNumber } = props.contact;
 	const t = props.tFunction;
+	const [edit, setEdit] = useState(false);
+	const handleEditClick = () => {
+		setEdit(true);
+	};
+
+	if (edit) {
+		return <Contact contact={props.contact} />;
+	}
 	return (
 		<div className="collection-item avatar">
 			<div>
@@ -21,7 +32,7 @@ export const ContactItem: React.SFC<{ contact: Contact } & { tFunction: TFunctio
 			<div>{address ? <span>{address}</span> : ''}</div>
 			<div>
 				<button className="secondary-content">
-					<i className="material-icons" onClick={e => console.log(e)}>
+					<i className="material-icons" onClick={handleEditClick}>
 						{t('contacts.contacts.edit')}
 					</i>
 				</button>

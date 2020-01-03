@@ -4,7 +4,7 @@ import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
 import { Container } from './Container';
 import { Route, BrowserRouter } from 'react-router-dom';
-import { AddContact, Contacts } from './contacts';
+import { Contact, Contacts } from './contacts';
 import { Upload } from './upload';
 import { akitaDevtools, persistState } from '@datorama/akita';
 
@@ -58,7 +58,7 @@ class App extends React.Component {
 				<BrowserRouter>
 					<Suspense fallback={<div>Loading... </div>}>
 						<Route path="/" exact component={Contacts} />
-						<Route path="/new" component={AddContact} />
+						<Route path="/new" component={Contact} />
 						<Route path="/upload" component={Upload} />
 					</Suspense>
 				</BrowserRouter>

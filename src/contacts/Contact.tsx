@@ -1,28 +1,56 @@
 import React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { contactsService } from './state';
+import { contactsService, Contact as Model } from './state';
 
-interface AddContactFormError {
+interface ContactFormError {
 	email?: string;
 }
-const AddContactComponent = (props: WithTranslation) => {
+const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
+	props: WithTranslation & { contact: Model }
+) => {
 	const { t } = props;
+	let contactId: string | number | undefined = 'undefined';
+	let initialValues = {
+		firstname: '',
+		lastname: '',
+		email: '',
+		picture: '',
+		company: '',
+		address: '',
+		phoneNumber: ''
+	};
+	if (typeof props.contact !== 'undefined') {
+		const {
+			id,
+			firstname,
+			lastname,
+			email,
+			picture,
+			company,
+			address,
+			phoneNumber
+		} = props.contact;
+		contactId = id;
+
+		initialValues = {
+			firstname,
+			lastname,
+			email,
+			picture: picture ? picture : '',
+			company: company ? company : '',
+			address: address ? address : '',
+			phoneNumber
+		};
+	}
+
 	return (
 		<div className="AddContacts">
 			<h3>{t('contacts.contacts.add-contact')}</h3>
 			<Formik
-				initialValues={{
-					firstname: '',
-					lastname: '',
-					email: '',
-					phoneNumber: '',
-					company: '',
-					address: '',
-					picture: ''
-				}}
+				initialValues={initialValues}
 				validate={values => {
-					const errors: AddContactFormError = {};
+					const errors: ContactFormError = {};
 					if (!values.email) {
 						errors.email = t('contacts.contacts.email.required');
 					} else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
@@ -33,7 +61,11 @@ const AddContactComponent = (props: WithTranslation) => {
 				}}
 				onSubmit={(values, { setSubmitting }) => {
 					setTimeout(() => {
-						contactsService.add(values);
+						if (contactId !== 'undefinded') {
+							contactsService.update(values);
+						} else {
+							contactsService.add(values);
+						}
 						setSubmitting(true);
 					}, 400);
 				}}
@@ -89,4 +121,4 @@ const AddContactComponent = (props: WithTranslation) => {
 	);
 };
 
-export const AddContact = withTranslation()(AddContactComponent);
+export const Contact = withTranslation()(ContactComponent);

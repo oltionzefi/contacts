@@ -2,16 +2,29 @@ import React from 'react';
 import { Navbar } from './navbar';
 import { LanguageSelector } from './language/LanguageSelector';
 import { Fabric } from 'office-ui-fabric-react/lib/Fabric';
+import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+
+const classNames = mergeStyleSets({
+	wrapper: {
+		textAlign: 'center'
+	},
+	container: {
+		display: 'flex',
+		flexWrap: 'wrap',
+		marginLeft: '2em',
+		marginRight: '2em'
+	}
+});
 
 export class Container extends React.Component {
 	render() {
 		return (
-			<Fabric className="App">
+			<Fabric className={classNames.wrapper}>
 				<div className="header">
 					<Navbar />
 					<LanguageSelector />
 				</div>
-				{this.props.children}
+				<div className={classNames.container}>{this.props.children}</div>
 			</Fabric>
 		);
 	}

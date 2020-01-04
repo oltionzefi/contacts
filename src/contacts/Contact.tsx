@@ -62,7 +62,7 @@ const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
 				onSubmit={(values, { setSubmitting }) => {
 					setTimeout(() => {
 						if (contactId !== 'undefinded') {
-							contactsService.update(values);
+							contactsService.update(contactId, values);
 						} else {
 							contactsService.add(values);
 						}

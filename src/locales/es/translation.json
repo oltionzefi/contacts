@@ -33,5 +33,6 @@
 	"contacts.contacts.company": "Empresa",
 	"contacts.contacts.address": "Dirección",
 	"contacts.menu.main.close": "Cerrar",
-	"contacts.contacts.edit": "Editar"
+	"contacts.contacts.edit": "Editar",
+	"contacts.contacts.filter.name": "Filtrar por nombre"
 }

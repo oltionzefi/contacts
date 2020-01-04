@@ -10,8 +10,8 @@ export class ContactsService {
 		this.contactsStore.add(contactData);
 	}
 
-	update(contact: Contact) {
-		this.contactsStore.update(contact.id, getContactData(contact));
+	update(contactId: string | number | undefined, contact: Contact) {
+		this.contactsStore.update(contactId, getContactData(contact));
 	}
 
 	delete(id: ID) {

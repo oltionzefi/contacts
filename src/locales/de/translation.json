@@ -34,5 +34,9 @@
 	"contacts.contacts.address": "Anschrift",
 	"contacts.menu.main.close": "Schließen",
 	"contacts.contacts.edit": "Bearbeiten",
-	"contacts.contacts.filter.name": "Filtern nach Namen"
+	"contacts.contacts.filter.name": "Filtern nach Namen",
+	"contacts.upload.description": "Laden Sie Ihre Datei mit Kontakten",
+	"contacts.contacts.avatar.alt": "Abdeckung für den Kontakt",
+	"contacts.upload.release.action": "Zum Ablegen loslassen",
+	"contacts.upload.drag.action": "Ziehen Sie eine Datei hierher"
 }

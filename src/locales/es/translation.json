@@ -34,5 +34,9 @@
 	"contacts.contacts.address": "Dirección",
 	"contacts.menu.main.close": "Cerrar",
 	"contacts.contacts.edit": "Editar",
-	"contacts.contacts.filter.name": "Filtrar por nombre"
+	"contacts.contacts.filter.name": "Filtrar por nombre",
+	"contacts.upload.description": "Sube tu archivo con contactos",
+	"contacts.contacts.avatar.alt": "Cubierta para contacto",
+	"contacts.upload.release.action": "Suelta para soltar",
+	"contacts.upload.drag.action": "Arrastra un archivo aquí"
 }

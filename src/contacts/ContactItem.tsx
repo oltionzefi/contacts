@@ -3,8 +3,12 @@ import { Contact as Model } from './state';
 import { Contact } from './Contact';
 import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
 import { classNames } from './styles';
+import { WithTranslation } from 'react-i18next';
 
-export const ContactItem: React.SFC<{ contact: Model }> = (props: { contact: Model }) => {
+export const ContactItem: React.FC<{ contact: Model } & WithTranslation> = (
+	props: { contact: Model } & WithTranslation
+) => {
+	const { t } = props;
 	const { firstname, lastname, email, picture, company, address, phoneNumber } = props.contact;
 	const [edit, setEdit] = useState(false);
 	const handleEditClick = () => {
@@ -30,7 +34,11 @@ export const ContactItem: React.SFC<{ contact: Model }> = (props: { contact: Mod
 	return (
 		<div className={classNames.collection}>
 			<div className={classNames.avatar}>
-				{picture ? <img src={picture} alt="Cover for contact" className="circle" /> : ''}
+				{picture ? (
+					<img src={picture} alt={t('contacts.contacts.avatar.alt')} className="circle" />
+				) : (
+					''
+				)}
 			</div>
 			<div className={classNames.name}>
 				<span className="title">{firstname + ' ' + lastname}</span>

@@ -10,7 +10,7 @@ const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
 	props: WithTranslation & { contact: Model }
 ) => {
 	const { t } = props;
-	let contactId: string | number | undefined = 'undefined';
+	let contactId: string | number | undefined;
 	let initialValues = {
 		firstname: '',
 		lastname: '',
@@ -61,12 +61,12 @@ const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
 				}}
 				onSubmit={(values, { setSubmitting }) => {
 					setTimeout(() => {
-						if (contactId !== 'undefinded') {
-							contactsService.update(contactId, values);
-						} else {
-							contactsService.add(values);
-						}
 						setSubmitting(true);
+						if (contactId === undefined) {
+							contactsService.add(values);
+						} else {
+							contactsService.update(contactId, values);
+						}
 					}, 400);
 				}}
 			>

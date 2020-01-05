@@ -35,7 +35,15 @@ const ContactsComponent: React.FC<WithTranslation> = (props: WithTranslation) =>
 	};
 
 	const contactsItems = contacts.map((contact: Contact) => {
-		return <ContactItem key={contact.id} contact={contact} />;
+		return (
+			<ContactItem
+				key={contact.id}
+				contact={contact}
+				i18n={props.i18n}
+				t={t}
+				tReady={props.tReady}
+			/>
+		);
 	});
 
 	const onChangeFilterName = (

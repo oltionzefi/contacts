@@ -48,7 +48,7 @@ initializeIcons();
 akitaDevtools();
 
 persistState({
-	include: ['language.language', 'contacts']
+	include: ['language', 'contacts']
 });
 
 class App extends React.Component {

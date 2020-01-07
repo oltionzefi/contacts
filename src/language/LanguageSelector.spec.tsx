@@ -1,6 +1,27 @@
 import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { LanguageSelector } from './LanguageSelector';
+import { ShallowWrapper, shallow } from 'enzyme';
+import { LanguageSelector, useLanguageSelector } from './LanguageSelector';
+import i18n from '../i18nForTests';
+
+describe('useLanguageSelector', () => {
+	const LanguageSelectorElement = () => {
+		const t = i18n.t;
+		const tReady = false;
+		const props = useLanguageSelector({ i18n, t, tReady });
+
+		return <div>{props}</div>;
+	};
+
+	const languageSelector = shallow(<LanguageSelectorElement />);
+
+	it('should have props for select dropdown', () => {
+		expect(languageSelector.props()).toEqual({
+			transLanguages: 'English',
+			value: 'en',
+			onChange: expect.any(Function)
+		});
+	});
+});
 
 describe('LanguageSelector', () => {
 	let languageSelector: ShallowWrapper;
@@ -9,5 +30,31 @@ describe('LanguageSelector', () => {
 		languageSelector = shallow(<LanguageSelector />);
 	});
 
-	it('renders languages selector', () => {});
+	it('should match the snapshot', () => {
+		expect(languageSelector.html()).toMatchSnapshot();
+	});
+
+	it('should render languages select dropdown', () => {
+		expect(languageSelector.find('select').length).toEqual(1);
+	});
+
+	it('should render props for language select', () => {
+		expect(languageSelector.find('select').props()).toEqual({
+			className: 'select'
+		});
+	});
+
+	it('should render default language as selected', () => {
+		expect(languageSelector.find('select').prop('value')).toEqual('en');
+	});
+
+	it('should change selected language on change', () => {
+		languageSelector.find('select').simulate('change', {
+			target: {
+				value: 'de'
+			}
+		});
+
+		expect(languageSelector.find('select').prop('value')).toEqual('de');
+	});
 });

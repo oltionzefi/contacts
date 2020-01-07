@@ -6,8 +6,7 @@ import { languageService, languageQuery } from './state';
 import { languages } from './constants';
 import { translateFunction } from './functions';
 
-/** @todo change language is not triggering change of props to be changed */
-const LanguageSelectorFunction = (props: WithTranslation) => {
+export const useLanguageSelector = (props: WithTranslation) => {
 	const { t } = props;
 	const [language, setLanguage] = useState(languageQuery.getLanguage());
 
@@ -23,9 +22,18 @@ const LanguageSelectorFunction = (props: WithTranslation) => {
 	const translateItems = translateFunction(t);
 	let transLanguages = translateItems(languages);
 
+	return {
+		transLanguages,
+		value: language,
+		onChange: setLanguage
+	};
+};
+
+const LanguageSelectorComponent: React.FC<WithTranslation> = (props: WithTranslation) => {
+	const { transLanguages, value, onChange } = useLanguageSelector(props);
 	return (
 		<div className="select">
-			<select onChange={e => setLanguage(e.target.value)} value={language}>
+			<select onChange={e => onChange(e.target.value)} value={value}>
 				{transLanguages.length &&
 					transLanguages.map((locale: LanguageTuple) => {
 						return (
@@ -39,4 +47,4 @@ const LanguageSelectorFunction = (props: WithTranslation) => {
 	);
 };
 
-export const LanguageSelector = withTranslation()(LanguageSelectorFunction);
+export const LanguageSelector = withTranslation()(LanguageSelectorComponent);

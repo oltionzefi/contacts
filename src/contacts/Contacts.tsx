@@ -2,9 +2,7 @@ import React, { useState, useEffect, FormEvent } from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { Contact, contactsQuery } from './state';
 import { ContactItem } from './ContactItem';
-import { Label } from 'office-ui-fabric-react/lib/Label';
-import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { Announced } from 'office-ui-fabric-react/lib/Announced';
+import { Label, TextField, Announced } from 'office-ui-fabric-react';
 import { classNames, controlStyles } from './styles';
 
 const ContactsComponent: React.FC<WithTranslation> = (props: WithTranslation) => {

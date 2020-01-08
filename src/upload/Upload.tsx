@@ -2,7 +2,7 @@ import React from 'react';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { classNames } from './styles';
 import { UploadContainer } from './UploadContainer';
-import { Label } from 'office-ui-fabric-react/lib/Label';
+import { Label } from 'office-ui-fabric-react';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 

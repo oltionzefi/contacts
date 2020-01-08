@@ -1,7 +1,6 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
-import { initializeIcons } from 'office-ui-fabric-react/lib/Icons';
+import { initializeIcons, loadTheme } from 'office-ui-fabric-react';
 import { Container } from './Container';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { Contact, Contacts } from './contacts';

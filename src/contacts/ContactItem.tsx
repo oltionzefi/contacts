@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Contact as Model } from './state';
 import { Contact } from './Contact';
-import { FontIcon } from 'office-ui-fabric-react/lib/Icon';
+import { FontIcon } from 'office-ui-fabric-react';
 import { classNames } from './styles';
 import { WithTranslation } from 'react-i18next';
 

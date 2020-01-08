@@ -1,6 +1,6 @@
 import React from 'react';
-import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
-import { IButtonProps } from 'office-ui-fabric-react/lib/Button';
+import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react';
+import { IButtonProps } from 'office-ui-fabric-react';
 import { WithTranslation, withTranslation } from 'react-i18next';
 import { translateItems } from '../utils/libs';
 

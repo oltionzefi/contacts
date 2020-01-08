@@ -10,6 +10,7 @@ describe('Container', () => {
 	});
 
 	it('renders nested components', () => {
+		expect(container.find('Fabric').length).toEqual(1);
 		expect(container.find('Navbar').length).toEqual(1);
 		expect(container.find('LanguageSelector').length).toEqual(1);
 	});

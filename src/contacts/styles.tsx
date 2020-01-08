@@ -1,4 +1,4 @@
-import { mergeStyleSets } from 'office-ui-fabric-react/lib/Styling';
+import { mergeStyleSets } from 'office-ui-fabric-react';
 
 export const classNames = mergeStyleSets({
 	wrapper: {

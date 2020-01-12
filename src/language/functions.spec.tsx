@@ -1,10 +1,10 @@
 import { translateFunction } from './functions';
 import { languages } from './constants';
-import i18n from '../i18nForTests';
+import { useTranslation } from 'react-i18next';
 
 describe('LanguageSelector functions', () => {
 	let lang = languages;
-	const t = i18n.t;
+	const { t } = useTranslation();
 	const translateItems = translateFunction(t);
 
 	it('should translate languages to english if en', () => {

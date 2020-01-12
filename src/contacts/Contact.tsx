@@ -6,10 +6,8 @@ import { contactsService, Contact as Model } from './state';
 interface ContactFormError {
 	email?: string;
 }
-const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
-	props: WithTranslation & { contact: Model }
-) => {
-	const { t } = props;
+
+export const useContact = (props: WithTranslation & { contact: Model }) => {
 	let contactId: string | number | undefined;
 	let initialValues = {
 		firstname: '',
@@ -44,6 +42,17 @@ const ContactComponent: React.FC<WithTranslation & { contact: Model }> = (
 		};
 	}
 
+	return {
+		contactId,
+		initialValues
+	};
+};
+
+const ContactComponent: React.SFC<WithTranslation & { contact: Model }> = (
+	props: WithTranslation & { contact: Model }
+) => {
+	const { t } = props;
+	const { contactId, initialValues } = useContact(props);
 	return (
 		<div className="AddContacts">
 			<h3>{t('contacts.contacts.add-contact')}</h3>

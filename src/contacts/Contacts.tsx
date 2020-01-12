@@ -5,8 +5,7 @@ import { ContactItem } from './ContactItem';
 import { Label, TextField, Announced } from 'office-ui-fabric-react';
 import { classNames, controlStyles } from './styles';
 
-const ContactsComponent: React.FC<WithTranslation> = (props: WithTranslation) => {
-	const { t } = props;
+export const useContacts = () => {
 	const [contacts, setContacts] = useState<Contact[]>([]);
 	const [filterName, setFilterName] = useState<string | undefined>();
 
@@ -32,6 +31,24 @@ const ContactsComponent: React.FC<WithTranslation> = (props: WithTranslation) =>
 		return data;
 	};
 
+	const onChangeFilterName = (
+		event: FormEvent<HTMLInputElement | HTMLTextAreaElement>,
+		text: string | undefined
+	): void => {
+		setFilterName(text);
+	};
+
+	return {
+		contacts,
+		filterName,
+		onChangeFilterName
+	};
+};
+
+const ContactsComponent: React.SFC<WithTranslation> = (props: WithTranslation) => {
+	const { t } = props;
+	const { contacts, filterName, onChangeFilterName } = useContacts();
+
 	const contactsItems = contacts.map((contact: Contact) => {
 		return (
 			<ContactItem
@@ -43,13 +60,6 @@ const ContactsComponent: React.FC<WithTranslation> = (props: WithTranslation) =>
 			/>
 		);
 	});
-
-	const onChangeFilterName = (
-		event: FormEvent<HTMLInputElement | HTMLTextAreaElement>,
-		text: string | undefined
-	): void => {
-		setFilterName(text);
-	};
 
 	return (
 		<div className={classNames.wrapper}>

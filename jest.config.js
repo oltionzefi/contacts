@@ -14,5 +14,8 @@ module.exports = {
 	transformIgnorePatterns: ['<rootDir>/(node_modules)/'],
 	modulePathIgnorePatterns: ['<rootDir>/(node_modules)/'],
 	modulePaths: ['<rootDir>/src', '<rootDir>/node_modules'],
-	setupFiles: ['<rootDir>/src/setupTests.ts']
+	setupFiles: ['<rootDir>/src/setupTests.ts'],
+	moduleNameMapper: {
+		i18next: '<rootDir>/__mocks__/react-i18next.js'
+	}
 };

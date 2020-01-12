@@ -4,10 +4,7 @@ import { useDrop } from 'react-dnd';
 import { ItemTypes } from './ItemTypes';
 import { darkGreenBackground, darkKhakiBackground, backgroud } from './styles';
 
-const UploadContainerComponent: React.FC<{ children?: ReactNode } & WithTranslation> = (
-	props: { children?: ReactNode } & WithTranslation
-) => {
-	const { t } = props;
+export const useUpload = () => {
 	const [{ canDrop, isOver }, drop] = useDrop({
 		drop: () => ({ name: 'File' }),
 		accept: ItemTypes.FILE,
@@ -24,6 +21,18 @@ const UploadContainerComponent: React.FC<{ children?: ReactNode } & WithTranslat
 		? darkKhakiBackground
 		: backgroud;
 
+	return {
+		drop,
+		isActive,
+		backgroundColor
+	};
+};
+
+const UploadContainerComponent: React.SFC<{ children?: ReactNode } & WithTranslation> = (
+	props: { children?: ReactNode } & WithTranslation
+) => {
+	const { t } = props;
+	const { drop, isActive, backgroundColor } = useUpload();
 	return (
 		<div ref={drop} style={{ backgroundColor }}>
 			{isActive ? t('contacts.upload.release.action') : t('contacts.upload.drag.action')}

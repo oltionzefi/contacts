@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
 import { LanguageSelector, useLanguageSelector } from './LanguageSelector';
-import i18n from '../i18nForTests';
+import i18n from '../i18n';
 
 describe('useLanguageSelector', () => {
 	const LanguageSelectorElement = () => {

@@ -10,6 +10,6 @@ describe('Navbar', () => {
 	});
 
 	it('renders navbar', () => {
-		expect(navbar.find('div').text()).toBe('Navbar');
+		expect(navbar.find('div').children).toBe('Navbar');
 	});
 });

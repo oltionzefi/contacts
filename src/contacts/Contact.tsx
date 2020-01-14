@@ -1,5 +1,5 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { contactsService, Contact as Model } from './state';
 
@@ -7,54 +7,15 @@ interface ContactFormError {
 	email?: string;
 }
 
-export const useContact = (props: WithTranslation & { contact: Model }) => {
-	let contactId: string | number | undefined;
-	let initialValues = {
-		firstname: '',
-		lastname: '',
-		email: '',
-		picture: '',
-		company: '',
-		address: '',
-		phoneNumber: ''
-	};
-	if (typeof props.contact !== 'undefined') {
-		const {
-			id,
-			firstname,
-			lastname,
-			email,
-			picture,
-			company,
-			address,
-			phoneNumber
-		} = props.contact;
-		contactId = id;
+export interface ContactProps {
+	contact: Model;
+}
 
-		initialValues = {
-			firstname,
-			lastname,
-			email,
-			picture: picture ? picture : '',
-			company: company ? company : '',
-			address: address ? address : '',
-			phoneNumber
-		};
-	}
-
-	return {
-		contactId,
-		initialValues
-	};
-};
-
-const ContactComponent: React.SFC<WithTranslation & { contact: Model }> = (
-	props: WithTranslation & { contact: Model }
-) => {
-	const { t } = props;
+export const Contact: React.FC<ContactProps> = props => {
+	const { t } = useTranslation();
 	const { contactId, initialValues } = useContact(props);
 	return (
-		<div className="AddContacts">
+		<>
 			<h3>{t('contacts.contacts.add-contact')}</h3>
 			<Formik
 				initialValues={initialValues}
@@ -126,8 +87,38 @@ const ContactComponent: React.SFC<WithTranslation & { contact: Model }> = (
 					</Form>
 				)}
 			</Formik>
-		</div>
+		</>
 	);
 };
 
-export const Contact = withTranslation()(ContactComponent);
+export const useContact = ({ contact }: ContactProps) => {
+	let contactId: string | number | undefined;
+	let initialValues = {
+		firstname: '',
+		lastname: '',
+		email: '',
+		picture: '',
+		company: '',
+		address: '',
+		phoneNumber: ''
+	};
+	if (typeof contact !== 'undefined') {
+		const { id, firstname, lastname, email, picture, company, address, phoneNumber } = contact;
+		contactId = id;
+
+		initialValues = {
+			firstname,
+			lastname,
+			email,
+			picture: picture ? picture : '',
+			company: company ? company : '',
+			address: address ? address : '',
+			phoneNumber
+		};
+	}
+
+	return {
+		contactId,
+		initialValues
+	};
+};

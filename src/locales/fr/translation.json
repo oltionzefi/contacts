@@ -38,5 +38,6 @@
 	"contacts.upload.description": "Téléchargez votre fichier avec des contacts",
 	"contacts.contacts.avatar.alt": "Couverture pour contact",
 	"contacts.upload.release.action": "Relâchez pour laisser tomber",
-	"contacts.upload.drag.action": "Faites glisser un fichier ici"
+	"contacts.upload.drag.action": "Faites glisser un fichier ici",
+	"contact.upload.file.none": "Rien à afficher"
 }

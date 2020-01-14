@@ -1,13 +1,31 @@
 import React, { useState, useEffect } from 'react';
-import { withTranslation, WithTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { LanguageTuple } from '../types';
 import i18n from '../i18n';
 import { languageService, languageQuery } from './state';
 import { languages } from './constants';
 import { translateFunction } from './functions';
 
-export const useLanguageSelector = (props: WithTranslation) => {
-	const { t } = props;
+export const LanguageSelector: React.FC = () => {
+	const { transLanguages, value, onChange } = useLanguageSelector();
+	return (
+		<>
+			<select onChange={e => onChange(e.target.value)} value={value}>
+				{transLanguages.length &&
+					transLanguages.map((locale: LanguageTuple) => {
+						return (
+							<option key={locale.key} value={locale.key}>
+								{locale.text}
+							</option>
+						);
+					})}
+			</select>
+		</>
+	);
+};
+
+export const useLanguageSelector = () => {
+	const { t } = useTranslation();
 	const [language, setLanguage] = useState(languageQuery.getLanguage());
 
 	useEffect(() => {
@@ -28,23 +46,3 @@ export const useLanguageSelector = (props: WithTranslation) => {
 		onChange: setLanguage
 	};
 };
-
-const LanguageSelectorComponent: React.FC<WithTranslation> = (props: WithTranslation) => {
-	const { transLanguages, value, onChange } = useLanguageSelector(props);
-	return (
-		<div className="select">
-			<select onChange={e => onChange(e.target.value)} value={value}>
-				{transLanguages.length &&
-					transLanguages.map((locale: LanguageTuple) => {
-						return (
-							<option key={locale.key} value={locale.key}>
-								{locale.text}
-							</option>
-						);
-					})}
-			</select>
-		</div>
-	);
-};
-
-export const LanguageSelector = withTranslation()(LanguageSelectorComponent);

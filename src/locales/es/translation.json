@@ -38,5 +38,6 @@
 	"contacts.upload.description": "Sube tu archivo con contactos",
 	"contacts.contacts.avatar.alt": "Cubierta para contacto",
 	"contacts.upload.release.action": "Suelta para soltar",
-	"contacts.upload.drag.action": "Arrastra un archivo aquí"
+	"contacts.upload.drag.action": "Arrastra un archivo aquí",
+	"contact.upload.file.none": "Nada que mostrar"
 }

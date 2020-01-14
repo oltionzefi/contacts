@@ -1,12 +1,12 @@
 import React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import { UploadContainer } from './UploadContainer';
+import { Container } from './Container';
 
 describe('UploadContainer', () => {
 	let uploadContainer: ShallowWrapper;
 
 	beforeEach(() => {
-		uploadContainer = shallow(<UploadContainer />);
+		uploadContainer = shallow(<Container />);
 	});
 
 	it('should create', () => {

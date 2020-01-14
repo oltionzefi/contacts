@@ -38,5 +38,6 @@
 	"contacts.upload.description": "Carica il tuo file con i contatti",
 	"contacts.contacts.avatar.alt": "Copertura per contatto",
 	"contacts.upload.release.action": "Rilasciare per rilasciare",
-	"contacts.upload.drag.action": "Trascina qui un file"
+	"contacts.upload.drag.action": "Trascina qui un file",
+	"contact.upload.file.none": "Niente da mostrare"
 }

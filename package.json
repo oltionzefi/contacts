@@ -30,7 +30,8 @@
     "eject": "react-scripts eject",
     "format:check": "prettier --list-different \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"src/**/*.{js,jsx,tsx,ts,json}\"",
-    "translations-scan": "i18next-scanner --config i18next-scanner.config.js"
+    "translations-scan": "i18next-scanner --config i18next-scanner.config.js",
+    "serve:build": "serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -61,6 +62,7 @@
     "i18next-scanner-typescript": "^1.0.3",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "serve": "^11.3.0",
     "ts-jest": "^24.3.0"
   },
   "husky": {

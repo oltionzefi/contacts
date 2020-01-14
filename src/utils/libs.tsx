@@ -1,11 +1,9 @@
-import { ICommandBarItemProps } from 'office-ui-fabric-react/lib/CommandBar';
-import { WithTranslation } from 'react-i18next';
+import { ICommandBarItemProps } from 'office-ui-fabric-react';
 import { TFunction } from 'i18next';
 
-export const translateItems = (props: WithTranslation) => (
+export const translateItems = (t: TFunction) => (
 	items: ICommandBarItemProps[]
 ): ICommandBarItemProps[] => {
-	const { t } = props;
 	return items.map((item: ICommandBarItemProps) => {
 		item = translate(t)(item);
 

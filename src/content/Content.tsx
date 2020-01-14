@@ -1,9 +1,7 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
-const ContentComponent = (props: WithTranslation) => {
-	const { t } = props;
+export const Content: React.FC = () => {
+	const { t } = useTranslation();
 	return <div>{t('contacts.content.placeholder')}</div>;
 };
-
-export const Content = withTranslation()(ContentComponent);

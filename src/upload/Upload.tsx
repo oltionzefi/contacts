@@ -1,25 +1,25 @@
 import React from 'react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { classNames } from './styles';
-import { UploadContainer } from './UploadContainer';
+import { Container } from './Container';
 import { Label } from 'office-ui-fabric-react';
 import { DndProvider } from 'react-dnd';
 import Backend from 'react-dnd-html5-backend';
 
-const UploadComponent = (props: WithTranslation) => {
-	const { t } = props;
+export const Upload: React.FC = () => {
+	const { t } = useTranslation();
 	return (
-		<div className={classNames.upload}>
-			<DndProvider backend={Backend}>
-				<div>
-					<Label>{t('contacts.upload.description')}</Label>
-				</div>
-				<div>
-					<UploadContainer />
-				</div>
-			</DndProvider>
-		</div>
+		<>
+			<div className={classNames.upload}>
+				<DndProvider backend={Backend}>
+					<div>
+						<Label>{t('contacts.upload.description')}</Label>
+					</div>
+					<div>
+						<Container />
+					</div>
+				</DndProvider>
+			</div>
+		</>
 	);
 };
-
-export const Upload = withTranslation()(UploadComponent);

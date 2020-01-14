@@ -1,7 +1,7 @@
 import React from 'react';
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react';
 import { IButtonProps } from 'office-ui-fabric-react';
-import { WithTranslation, withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { translateItems } from '../utils/libs';
 
 const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
@@ -85,13 +85,13 @@ const farItems: ICommandBarItemProps[] = [
 	}
 ];
 
-const ToolbarComponent = (props: WithTranslation) => {
-	const { t } = props;
-	let transToolbarItems = translateItems(props)(toolbarItems);
-	let transOverflowItems = translateItems(props)(overflowItems);
-	let transFarItems = translateItems(props)(farItems);
+export const Toolbar: React.FC = () => {
+	const { t } = useTranslation();
+	let transToolbarItems = translateItems(t)(toolbarItems);
+	let transOverflowItems = translateItems(t)(overflowItems);
+	let transFarItems = translateItems(t)(farItems);
 	return (
-		<div>
+		<>
 			<CommandBar
 				items={transToolbarItems}
 				overflowItems={transOverflowItems}
@@ -99,8 +99,6 @@ const ToolbarComponent = (props: WithTranslation) => {
 				farItems={transFarItems}
 				ariaLabel={t('contacts.toolbar.aria-label')}
 			/>
-		</div>
+		</>
 	);
 };
-
-export const Toolbar = withTranslation()(ToolbarComponent);

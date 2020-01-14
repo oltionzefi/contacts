@@ -38,5 +38,6 @@
 	"contacts.upload.description": "Upload your file with contacts",
 	"contacts.contacts.avatar.alt": "Cover for contact",
 	"contacts.upload.release.action": "Release to drop",
-	"contacts.upload.drag.action": "Drag a file here"
+	"contacts.upload.drag.action": "Drag a file here",
+	"contact.upload.file.none": "Nothing to display"
 }

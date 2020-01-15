@@ -1,4 +1,6 @@
 module.exports = {
+	testEnvironment: 'jest-environment-jsdom-fifteen',
+	rootDir: __dirname,
 	transform: {
 		'^.+\\.tsx?$': 'ts-jest',
 		'^.+\\.ts?$': 'ts-jest',

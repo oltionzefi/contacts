@@ -1,4 +1,4 @@
-export type LanguageTuple = {
+export type KeyText = {
 	key: string;
 	text: string;
 };

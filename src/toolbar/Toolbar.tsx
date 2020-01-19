@@ -2,7 +2,7 @@ import React from 'react';
 import { CommandBar, ICommandBarItemProps } from 'office-ui-fabric-react';
 import { IButtonProps } from 'office-ui-fabric-react';
 import { useTranslation } from 'react-i18next';
-import { translateItems } from '../utils/libs';
+import { translateItems } from '../utils';
 
 const overflowProps: IButtonProps = { ariaLabel: 'More commands' };
 

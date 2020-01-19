@@ -1,7 +1,7 @@
-import { LanguageTuple } from '../types';
+import { KeyText } from '../types';
 
 /** Supported languages for language switcher */
-export const languages: LanguageTuple[] = [
+export const languages: KeyText[] = [
 	{
 		key: 'en',
 		text: 'English'

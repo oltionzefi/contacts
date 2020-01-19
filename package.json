@@ -28,6 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "coverage": "yarn test --coverage",
+    "release": "release-it",
     "postcoverage": "open-cli coverage/lcov-report/index.html",
     "type-check": "tsc --noEmit",
     "eject": "react-scripts eject",
@@ -73,6 +74,7 @@
     "open-cli": "^5.0.0",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
+    "release-it": "^12.4.3",
     "serve": "^11.3.0",
     "ts-jest": "^24.3.0"
   },

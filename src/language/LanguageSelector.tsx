@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { LanguageTuple } from '../types';
+import { KeyText } from '../types';
 import i18n from '../i18n';
 import { languageService, languageQuery } from './state';
 import { languages } from './constants';
@@ -12,7 +12,7 @@ export const LanguageSelector: React.FC = () => {
 		<>
 			<select onChange={e => onChange(e.target.value)} value={value}>
 				{transLanguages.length &&
-					transLanguages.map((locale: LanguageTuple) => {
+					transLanguages.map((locale: KeyText) => {
 						return (
 							<option key={locale.key} value={locale.key}>
 								{locale.text}

@@ -39,5 +39,7 @@
 	"contacts.contacts.avatar.alt": "Cubierta para contacto",
 	"contacts.upload.release.action": "Suelta para soltar",
 	"contacts.upload.drag.action": "Arrastra un archivo aquí",
-	"contact.upload.file.none": "Nada que mostrar"
+	"contact.upload.file.none": "Nada que mostrar",
+	"contacts.upload.success": "El archivo se cargó correctamente",
+	"contacts.upload.failed": "Error al cargar el archivo"
 }

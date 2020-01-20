@@ -39,5 +39,7 @@
 	"contacts.contacts.avatar.alt": "Abdeckung für den Kontakt",
 	"contacts.upload.release.action": "Zum Ablegen loslassen",
 	"contacts.upload.drag.action": "Ziehen Sie eine Datei hierher",
-	"contact.upload.file.none": "Nichts zu zeigen"
+	"contact.upload.file.none": "Nichts zu zeigen",
+	"contacts.upload.success": "Die Datei wurde erfolgreich hochgeladen",
+	"contacts.upload.failed": "Datei-Upload fehlgeschlagen"
 }

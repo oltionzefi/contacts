@@ -6,16 +6,20 @@ import { darkGreenBackground, darkKhakiBackground, backgroud } from './styles';
 
 export interface TargetBoxProps {
 	onDrop: (props: TargetBoxProps, monitor: DropTargetMonitor) => void;
+	uplaodData: (item: any) => void;
 }
 
 export const ContainerBox: React.FC<TargetBoxProps> = props => {
 	const { t } = useTranslation();
-	const { onDrop } = props;
+	const { onDrop, uplaodData } = props;
 	const [{ canDrop, isOver }, drop] = useDrop({
 		accept: [NativeTypes.FILE],
 		drop(item, monitor) {
 			if (onDrop) {
 				onDrop(props, monitor);
+			}
+			if (item) {
+				uplaodData(item);
 			}
 		},
 		collect: monitor => ({

@@ -39,5 +39,7 @@
 	"contacts.contacts.avatar.alt": "Copertura per contatto",
 	"contacts.upload.release.action": "Rilasciare per rilasciare",
 	"contacts.upload.drag.action": "Trascina qui un file",
-	"contact.upload.file.none": "Niente da mostrare"
+	"contact.upload.file.none": "Niente da mostrare",
+	"contacts.upload.success": "Il file è stato caricato correttamente",
+	"contacts.upload.failed": "Caricamento del file non riuscito"
 }

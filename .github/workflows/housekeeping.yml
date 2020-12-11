@@ -24,5 +24,3 @@ jobs:
           repo_token: ${{ github.token }}
           date: '3 months ago'
           dry_run: true
-          delete_tags: true
-          minimum_tags: 5

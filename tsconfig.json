@@ -1,33 +1,49 @@
 {
-	"compilerOptions": {
-		"outDir": "build/lib",
-		"target": "es5",
-		"lib": ["es5", "es6", "es7", "es2017", "dom", "dom.iterable"],
-		"sourceMap": true,
-		"allowJs": false,
-		"skipLibCheck": true,
-		"allowSyntheticDefaultImports": true,
-		"forceConsistentCasingInFileNames": true,
-		"module": "esnext",
-		"moduleResolution": "node",
-		"noEmit": true,
-		"jsx": "react",
-		"noImplicitAny": false,
-		"rootDirs": ["src"],
-		"baseUrl": "src",
-		"noImplicitReturns": true,
-		"noImplicitThis": true,
-		"strictNullChecks": true,
-		"suppressImplicitAnyIndexErrors": true,
-		"noUnusedLocals": true,
-		"declaration": true,
-		"experimentalDecorators": true,
-		"emitDecoratorMetadata": true,
-		"esModuleInterop": true,
-		"strict": true,
-		"resolveJsonModule": true,
-		"isolatedModules": true
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "build", "scripts"]
+  "compilerOptions": {
+    "outDir": "build/lib",
+    "target": "es5",
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
+      "dom",
+      "dom.iterable"
+    ],
+    "sourceMap": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "noImplicitAny": false,
+    "rootDirs": [
+      "src"
+    ],
+    "baseUrl": "src",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "scripts"
+  ]
 }

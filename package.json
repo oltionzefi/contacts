@@ -73,7 +73,7 @@
     "babel-plugin-macros": "^2.8.0",
     "babel-preset-react-app": "^9.1.0",
     "enzyme": "^3.10.0",
-    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-adapter-react-16": "^1.15.6",
     "husky": "^3.1.0",
     "i18next-scanner": "^2.10.3",
     "i18next-scanner-typescript": "^1.0.3",

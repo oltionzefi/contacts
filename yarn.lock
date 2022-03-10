@@ -1170,10 +1170,10 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.0", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
-  version "7.12.13"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.13.tgz#0a21452352b02542db0ffb928ac2d3ca7cb6d66d"
-  integrity sha512-8+3UMPBrjFa/6TtKi/7sehPKqfAm4g6K+YQjyyFOLUTxzOngcRZTlAVY8sc2CORJYqdHQY8gRPHmn+qo15rCBw==
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.17.2", "@babel/runtime@^7.3.1", "@babel/runtime@^7.5.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.4":
+  version "7.17.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.2.tgz#66f68591605e59da47523c631416b18508779941"
+  integrity sha512-hzeyJyMA1YGdJTuWU0e/j4wKXrU4OMFvY2MSlaI9B7VQb0r5cxTE3EAIS2Q7Tn2RIcDkRvTA/v2JsAEhxe99uw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -8711,12 +8711,12 @@ i18next-scanner@^3.0.0:
     vinyl "^2.2.0"
     vinyl-fs "^3.0.1"
 
-i18next@*, i18next@^19.8.7:
-  version "19.8.7"
-  resolved "https://registry.yarnpkg.com/i18next/-/i18next-19.8.7.tgz#ef023e353974d1b1453e8b6331bd9fb7cba427df"
-  integrity sha512-ezo1gb7QO4OQ5gQCdZMUxopwQSoqpRp6whdEjm1grxMSmkGj1NJ+kYS0UQd4NnpPIVqsgqTQ2L2eqSQYQ+U3Fw==
+i18next@*, i18next@^21.6.14:
+  version "21.6.14"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-21.6.14.tgz#2bc199fba7f4da44b5952d7df0a3814a6e5c3943"
+  integrity sha512-XL6WyD+xlwQwbieXRlXhKWoLb/rkch50/rA+vl6untHnJ+aYnkQ0YDZciTWE78PPhOpbi2gR0LTJCJpiAhA+uQ==
   dependencies:
-    "@babel/runtime" "^7.12.0"
+    "@babel/runtime" "^7.17.2"
 
 iconv-lite@0.4.24, iconv-lite@^0.4.24:
   version "0.4.24"

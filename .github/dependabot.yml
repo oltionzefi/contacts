@@ -12,3 +12,11 @@ updates:
       prefix: fix
       prefix-development: chore
       include: scope
+    groups:
+      major-updates:
+        update-types:
+          - major
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch

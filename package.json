@@ -30,7 +30,7 @@
     "test:watch": "vitest",
     "coverage": "vitest run --coverage",
     "release": "release-it",
-    "postcoverage": "open-cli coverage/lcov-report/index.html",
+    "postcoverage": "node -e \"process.env.CI || require('child_process').execSync('open-cli coverage/lcov-report/index.html', {stdio:'inherit'})\"",
     "type-check": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build -o .dist",

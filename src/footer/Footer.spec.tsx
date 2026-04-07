@@ -5,7 +5,7 @@ describe('Footer', () => {
 	it('renders footer', () => {
 		render(<Footer />);
 		expect(
-			screen.getByText('contacts.footer.placeholder')
+			screen.getByText('contacts.footer.placeholder'),
 		).toBeInTheDocument();
 	});
 });

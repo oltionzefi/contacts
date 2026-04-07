@@ -17,7 +17,7 @@ describe('FileList', () => {
 		it('shows "no file" message when empty', () => {
 			render(<FileList files={[]} />);
 			expect(
-				screen.getByText('contact.upload.file.none')
+				screen.getByText('contact.upload.file.none'),
 			).toBeInTheDocument();
 		});
 	});

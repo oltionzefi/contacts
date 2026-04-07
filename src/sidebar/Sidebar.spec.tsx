@@ -5,7 +5,7 @@ describe('Sidebar', () => {
 	it('renders sidebar', () => {
 		render(<Sidebar />);
 		expect(
-			screen.getByText('contacts.sidebar.placeholder')
+			screen.getByText('contacts.sidebar.placeholder'),
 		).toBeInTheDocument();
 	});
 });

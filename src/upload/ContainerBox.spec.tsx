@@ -11,10 +11,10 @@ describe('Upload ContainerBox', () => {
 		render(
 			<DndProvider backend={HTML5Backend}>
 				<ContainerBox onDrop={onDrop} uplaodData={onUpload} />
-			</DndProvider>
+			</DndProvider>,
 		);
 		expect(
-			screen.getByText('contacts.upload.drag.action')
+			screen.getByText('contacts.upload.drag.action'),
 		).toBeInTheDocument();
 	});
 });

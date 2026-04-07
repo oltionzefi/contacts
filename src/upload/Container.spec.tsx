@@ -8,7 +8,7 @@ describe('Upload Container', () => {
 		const { container } = render(
 			<DndProvider backend={HTML5Backend}>
 				<Container />
-			</DndProvider>
+			</DndProvider>,
 		);
 		expect(container).toBeInTheDocument();
 	});

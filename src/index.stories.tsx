@@ -10,8 +10,8 @@ const AppBadge: React.FC<{
 		variant === 'success'
 			? '#22c55e'
 			: variant === 'warning'
-			? '#f59e0b'
-			: '#2563EB';
+				? '#f59e0b'
+				: '#2563EB';
 	return (
 		<span
 			style={{

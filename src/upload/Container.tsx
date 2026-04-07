@@ -17,7 +17,7 @@ export const Container: React.FC = () => {
 				setDroppedFiles(dropped.files);
 			}
 		},
-		[]
+		[],
 	);
 
 	const uplaodData = useCallback((item: any) => {

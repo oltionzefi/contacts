@@ -14,7 +14,8 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "ignoreDeprecations": "6.0",
     "noEmit": true,
     "jsx": "react-jsx",
     "rootDirs": [

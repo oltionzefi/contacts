@@ -45,9 +45,7 @@ initializeIcons();
 
 const App: React.FC = () => (
 	<Container>
-		<BrowserRouter
-			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-		>
+		<BrowserRouter>
 			<Suspense
 				fallback={<div className="loading-fallback">Loading…</div>}
 			>

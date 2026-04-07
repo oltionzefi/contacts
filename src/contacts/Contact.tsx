@@ -61,13 +61,13 @@ export const Contact: React.FC<ContactProps> = (props) => {
 			setTimeout(() => {
 				if (contactId === undefined) {
 					contactsService.add(
-						values as Parameters<typeof contactsService.add>[0]
+						values as Parameters<typeof contactsService.add>[0],
 					);
 					reset();
 				} else {
 					contactsService.update(
 						contactId,
-						values as Parameters<typeof contactsService.update>[1]
+						values as Parameters<typeof contactsService.update>[1],
 					);
 				}
 				setSaveSuccess(true);

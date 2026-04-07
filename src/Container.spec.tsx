@@ -11,7 +11,7 @@ describe('Container', () => {
 		render(
 			<Container>
 				<span>child content</span>
-			</Container>
+			</Container>,
 		);
 		expect(screen.getByText('child content')).toBeInTheDocument();
 	});

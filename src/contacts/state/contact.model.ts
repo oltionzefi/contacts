@@ -1,7 +1,9 @@
-import { ID, guid } from '@datorama/akita';
+import { guid } from '../../utils/guid';
+
+export type ContactID = string;
 
 export type Contact = {
-	id?: ID;
+	id?: ContactID;
 	firstname: string;
 	lastname: string;
 	email: string;
@@ -21,13 +23,13 @@ export function getContactData(contact: Contact) {
 		phoneNumber: contact.phoneNumber,
 		address: contact.address,
 		picture: contact.picture,
-		deleted: false
+		deleted: false,
 	};
 }
 
-export function createContact(contact: Contact) {
+export function createContact(contact: Contact): Contact & { id: ContactID } {
 	return {
 		id: guid(),
-		...getContactData(contact)
+		...getContactData(contact),
 	};
 }

@@ -1,65 +1,40 @@
-import { mergeStyleSets } from 'office-ui-fabric-react';
+import { mergeStyleSets } from '@fluentui/react';
 
 export const classNames = mergeStyleSets({
 	wrapper: {
+		display: 'flex',
+		flexDirection: 'column',
+		width: '100%',
+		minWidth: 0,
 		flex: 1,
-		flexDirection: 'column'
-	},
-	header: {
-		flex: 1,
-		textAlign: 'center',
-		alignItems: 'center'
 	},
 	collections: {
-		flex: 1
-	},
-	collection: {
-		flex: 1,
 		display: 'flex',
-		flexDirection: 'row',
-		border: '.15em solid black',
-		borderRadius: '1em',
-		padding: '2em',
-		marginTop: '.15em'
-	},
-	avatar: {
-		flex: 1
-	},
-	name: {
-		flex: 3
-	},
-	email: {
-		flex: 3
-	},
-	details: {
-		flex: 3
+		flex: 1,
+		flexDirection: 'column',
+		width: '100%',
 	},
 	editContact: {
-		flex: 1,
 		display: 'flex',
 		flexDirection: 'row',
+		width: '100%',
 		padding: '0.25em',
-		marginTop: '0.15em'
+		marginTop: '0.15em',
 	},
 	contact: {
 		flex: 5,
-		alignItems: 'center'
+		minWidth: 0,
 	},
 	close: {
-		flex: 1,
-		marginTop: '1.55em'
+		flexShrink: 0,
+		display: 'flex',
+		alignItems: 'flex-start',
+		justifyContent: 'center',
+		paddingTop: '1.5rem',
 	},
 	icon: {
-		fontSize: 20,
-		height: 25,
-		width: 25,
-		margin: '0 25px'
-	}
+		fontSize: 16,
+		height: 16,
+		width: 16,
+	},
 });
-
-export const controlStyles = {
-	root: {
-		margin: '0 20px 20px 0',
-		maxWidth: '300px'
-	}
-};

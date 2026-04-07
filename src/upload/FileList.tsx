@@ -7,8 +7,9 @@ export interface FileListProps {
 }
 
 const list = (files: File[]) => {
-	const label = (file: File) => `'${file.name}' of size '${file.size}' and type '${file.type}'`;
-	return files.map(file => <li key={file.name}>{label(file)}</li>);
+	const label = (file: File) =>
+		`'${file.name}' of size '${file.size}' and type '${file.type}'`;
+	return files.map((file) => <li key={file.name}>{label(file)}</li>);
 };
 
 export const FileList: React.FC<FileListProps> = ({ files }) => {
@@ -22,5 +23,7 @@ export const FileList: React.FC<FileListProps> = ({ files }) => {
 	}
 
 	const fileList = list(files);
-	return <div style={{ backgroundColor: darkGreenBackground }}>{fileList}</div>;
+	return (
+		<div style={{ backgroundColor: darkGreenBackground }}>{fileList}</div>
+	);
 };

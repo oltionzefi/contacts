@@ -1,16 +1,8 @@
-import { Query } from '@datorama/akita';
-import { LanguageStore, languageStore, LanguageState } from './language.store';
+import { useLanguageStore } from './language.store';
 
-export class LanguageQuery extends Query<LanguageState> {
-	selectLanguage$ = this.select(state => !!state.language);
+export { useLanguageStore };
 
-	constructor(protected store: LanguageStore) {
-		super(store);
-	}
-
-	getLanguage(): string {
-		return this.getValue().language;
-	}
-}
-
-export const languageQuery = new LanguageQuery(languageStore);
+/** Compatibility shim for components using the old query API */
+export const languageQuery = {
+	getLanguage: () => useLanguageStore.getState().language,
+};

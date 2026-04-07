@@ -1,17 +1,20 @@
-import React, { useCallback } from 'react';
+import { render, screen } from '@testing-library/react';
 import { ContainerBox } from './ContainerBox';
-import { shallow, ShallowWrapper } from 'enzyme';
-import { DropTargetMonitor } from 'react-dnd';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 describe('Upload ContainerBox', () => {
-	let uplaodContainerBox: ShallowWrapper;
-	const onDrop = useCallback((item: any, monitor: DropTargetMonitor) => {}, []);
+	it('renders drop zone text', () => {
+		const onDrop = vi.fn();
+		const onUpload = vi.fn();
 
-	beforeEach(() => {
-		uplaodContainerBox = shallow(<ContainerBox onDrop={onDrop} />);
-	});
-
-	it('renders upload container box', () => {
-		expect(uplaodContainerBox.children).toContain('ContainerBox');
+		render(
+			<DndProvider backend={HTML5Backend}>
+				<ContainerBox onDrop={onDrop} uplaodData={onUpload} />
+			</DndProvider>
+		);
+		expect(
+			screen.getByText('contacts.upload.drag.action')
+		).toBeInTheDocument();
 	});
 });

@@ -1,14 +1,11 @@
-module.exports = {
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
 	stories: ['../src/**/*.stories.tsx'],
-	webpackFinal: async config => {
-		config.module.rules.push({
-			test: /\.(ts|tsx)$/,
-			loader: require.resolve('babel-loader'),
-			options: {
-				presets: [['react-app', { flow: false, typescript: true }]]
-			}
-		});
-		config.resolve.extensions.push('.ts', '.tsx');
-		return config;
-	}
+	addons: ['@storybook/addon-essentials'],
+	framework: {
+		name: '@storybook/react-vite',
+		options: {},
+	},
 };
+
+module.exports = config;

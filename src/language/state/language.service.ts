@@ -1,11 +1,9 @@
-import { LanguageStore, languageStore } from './language.store';
+import { useLanguageStore } from './language.store';
 
-export class LanguageService {
-	constructor(private readonly languageStore: LanguageStore) {}
+export { useLanguageStore };
 
-	setLanguage(language: string): void {
-		this.languageStore.update({ language: language });
-	}
-}
-
-export const languageService = new LanguageService(languageStore);
+/** Compatibility alias for components using the old service API */
+export const languageService = {
+	setLanguage: (lang: string) =>
+		useLanguageStore.getState().setLanguage(lang),
+};

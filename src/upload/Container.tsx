@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { DropTargetMonitor } from 'react-dnd';
 import { FileList } from './FileList';
 import { ContainerBox } from './ContainerBox';
-import * as XLSX from 'xlsx';
+import ExcelJS from 'exceljs';
 import { Message } from './Message';
 
 export const Container: React.FC = () => {
@@ -10,27 +10,31 @@ export const Container: React.FC = () => {
 	const [uploadStatus, setUploadStatus] = useState<boolean>(false);
 	const [openMessageBar, setOpenMessageBar] = useState<boolean>(false);
 
-	const handleFileDrop = useCallback((item: any, monitor: DropTargetMonitor) => {
-		if (monitor) {
-			const files = monitor.getItem().files;
-			setDroppedFiles(files);
-		}
-	}, []);
+	const handleFileDrop = useCallback(
+		(item: any, monitor: DropTargetMonitor) => {
+			if (monitor) {
+				const dropped = monitor.getItem() as { files: File[] };
+				setDroppedFiles(dropped.files);
+			}
+		},
+		[]
+	);
 
 	const uplaodData = useCallback((item: any) => {
 		item.files.forEach((file: File) => {
 			const reader = new FileReader();
-			reader.onload = async e => {
-				const data = e.target?.result;
-				const wb = XLSX.read(data, { type: 'binary' });
-				const wsname = wb.SheetNames[0];
-				const ws = wb.Sheets[wsname];
-				/* Convert array of arrays */
-				const datas = XLSX.utils.sheet_to_csv(ws);
-				/* Update state */
-				console.log('Data>>>' + datas);
+			reader.onload = async (e) => {
+				const data = e.target?.result as ArrayBuffer;
+				const workbook = new ExcelJS.Workbook();
+				await workbook.xlsx.load(data);
+				const worksheet = workbook.worksheets[0];
+				const rows: string[] = [];
+				worksheet.eachRow((row) => {
+					rows.push((row.values as string[]).slice(1).join(','));
+				});
+				console.log('Data>>>' + rows.join('\n'));
 			};
-			reader.readAsBinaryString(file);
+			reader.readAsArrayBuffer(file);
 		});
 		setUploadStatus(true);
 		setOpenMessageBar(true);

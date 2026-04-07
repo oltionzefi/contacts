@@ -41,5 +41,10 @@
 	"contacts.upload.drag.action": "Arrastra un archivo aquí",
 	"contact.upload.file.none": "Nada que mostrar",
 	"contacts.upload.success": "El archivo se cargó correctamente",
-	"contacts.upload.failed": "Error al cargar el archivo"
+	"contacts.upload.failed": "Error al cargar el archivo",
+	"contacts.contacts.empty.title": "Aún no hay contactos",
+	"contacts.contacts.empty.description": "Agrega tu primer contacto usando el botón Nuevo",
+	"contacts.contacts.submit.success": "¡Contacto guardado!",
+	"contacts.contacts.firstname.required": "El nombre es obligatorio",
+	"contacts.menu.main.home": "Contactos"
 }

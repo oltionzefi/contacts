@@ -1,34 +1,39 @@
 import React from 'react';
 import { Navbar } from './navbar';
 import { LanguageSelector } from './language/LanguageSelector';
-import { Fabric, mergeStyleSets } from 'office-ui-fabric-react';
+import { Fabric, mergeStyleSets } from '@fluentui/react';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 
 const classNames = mergeStyleSets({
-	wrapper: {
-		textAlign: 'center'
-	},
-	container: {
+	shell: {
 		display: 'flex',
-		flexWrap: 'wrap',
-		marginLeft: '2em',
-		marginRight: '2em'
-	}
+		flexDirection: 'column',
+		flex: 1,
+		minHeight: 0,
+		backgroundColor: '#F8FAFC',
+	},
 });
 
-export class Container extends React.Component {
-	render() {
-		return (
-			<Fabric className={classNames.wrapper}>
-				<I18nextProvider i18n={i18n}>
-					<div className="header">
+export const Container: React.FC<{ children?: React.ReactNode }> = ({
+	children,
+}) => {
+	return (
+		<Fabric className={classNames.shell}>
+			<I18nextProvider i18n={i18n}>
+				<header className="app-header">
+					<div className="app-header__nav">
 						<Navbar />
+					</div>
+					<div className="app-header__actions">
 						<LanguageSelector />
 					</div>
-					<div className={classNames.container}>{this.props.children}</div>
-				</I18nextProvider>
-			</Fabric>
-		);
-	}
-}
+				</header>
+				{/* app-main fills the flex height; app-content centers the content column */}
+				<main className="app-main">
+					<div className="app-content">{children}</div>
+				</main>
+			</I18nextProvider>
+		</Fabric>
+	);
+};

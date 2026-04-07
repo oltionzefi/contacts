@@ -41,5 +41,10 @@
 	"contacts.upload.drag.action": "Trascina qui un file",
 	"contact.upload.file.none": "Niente da mostrare",
 	"contacts.upload.success": "Il file è stato caricato correttamente",
-	"contacts.upload.failed": "Caricamento del file non riuscito"
+	"contacts.upload.failed": "Caricamento del file non riuscito",
+	"contacts.contacts.empty.title": "Nessun contatto ancora",
+	"contacts.contacts.empty.description": "Aggiungi il tuo primo contatto tramite il pulsante Nuovo",
+	"contacts.contacts.submit.success": "Contatto salvato!",
+	"contacts.contacts.firstname.required": "Il nome è obbligatorio",
+	"contacts.menu.main.home": "Contatti"
 }

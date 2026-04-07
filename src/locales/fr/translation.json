@@ -41,5 +41,10 @@
 	"contacts.upload.drag.action": "Faites glisser un fichier ici",
 	"contact.upload.file.none": "Rien à afficher",
 	"contacts.upload.success": "Le fichier a été téléchargé avec succès",
-	"contacts.upload.failed": "Échec du téléchargement du fichier"
+	"contacts.upload.failed": "Échec du téléchargement du fichier",
+	"contacts.contacts.empty.title": "Aucun contact pour le moment",
+	"contacts.contacts.empty.description": "Ajoutez votre premier contact via le bouton Nouveau",
+	"contacts.contacts.submit.success": "Contact enregistré !",
+	"contacts.contacts.firstname.required": "Le prénom est requis",
+	"contacts.menu.main.home": "Contacts"
 }

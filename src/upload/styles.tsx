@@ -1,19 +1,14 @@
-import { mergeStyleSets } from 'office-ui-fabric-react';
+import { mergeStyleSets } from '@fluentui/react';
 
 export const classNames = mergeStyleSets({
 	upload: {
+		display: 'flex',
 		flex: 1,
 		flexDirection: 'column',
-		height: '15rem',
-		marginRight: '1.5rem',
-		marginBottom: '1.5rem',
-		color: 'white',
+		width: '100%',
+		minHeight: '12rem',
 		padding: '1rem',
-		textAlign: 'center',
-		fontSize: '1rem',
-		lineHeight: 'normal',
-		float: 'left'
-	}
+	},
 });
 
 export const backgroud = '#222';

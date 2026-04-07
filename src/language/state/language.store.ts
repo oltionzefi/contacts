@@ -1,21 +1,20 @@
-import { StoreConfig, Store } from '@datorama/akita';
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { defaultLanguage } from '../../i18n';
 
-export interface LanguageState {
+interface LanguageState {
 	language: string;
+	setLanguage: (lang: string) => void;
+	getLanguage: () => string;
 }
 
-export function createInitialState(): LanguageState {
-	return {
-		language: defaultLanguage
-	};
-}
-
-@StoreConfig({ name: 'language' })
-export class LanguageStore extends Store<LanguageState> {
-	constructor() {
-		super(createInitialState());
-	}
-}
-
-export const languageStore = new LanguageStore();
+export const useLanguageStore = create<LanguageState>()(
+	persist(
+		(set, get) => ({
+			language: defaultLanguage,
+			setLanguage: (lang: string) => set({ language: lang }),
+			getLanguage: () => get().language,
+		}),
+		{ name: 'language' }
+	)
+);

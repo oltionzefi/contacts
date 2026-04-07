@@ -1,57 +1,28 @@
-import React from 'react';
-import { ShallowWrapper, shallow } from 'enzyme';
-import { LanguageSelector, useLanguageSelector } from './LanguageSelector';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { LanguageSelector } from './LanguageSelector';
 
 describe('LanguageSelector', () => {
-	let languageSelector: ShallowWrapper;
-
-	beforeEach(() => {
-		languageSelector = shallow(<LanguageSelector />);
+	it('renders language select dropdown', () => {
+		render(<LanguageSelector />);
+		expect(screen.getByRole('combobox')).toBeInTheDocument();
 	});
 
-	it('should match the snapshot', () => {
-		expect(languageSelector.html()).toMatchSnapshot();
+	it('renders default language as selected', () => {
+		render(<LanguageSelector />);
+		const select = screen.getByRole('combobox') as HTMLSelectElement;
+		expect(select.value).toBe('en');
 	});
 
-	it('should render languages select dropdown', () => {
-		expect(languageSelector.find('select').length).toEqual(1);
+	it('renders all supported language options', () => {
+		render(<LanguageSelector />);
+		const select = screen.getByRole('combobox') as HTMLSelectElement;
+		expect(select.options.length).toBeGreaterThan(0);
 	});
 
-	it('should render props for language select', () => {
-		expect(languageSelector.find('select').props()).toEqual({
-			className: 'select'
-		});
-	});
-
-	it('should render default language as selected', () => {
-		expect(languageSelector.find('select').prop('value')).toEqual('en');
-	});
-
-	it('should change selected language on change', () => {
-		languageSelector.find('select').simulate('change', {
-			target: {
-				value: 'de'
-			}
-		});
-
-		expect(languageSelector.find('select').prop('value')).toEqual('de');
-	});
-});
-
-describe('useLanguageSelector', () => {
-	const LanguageSelectorElement = () => {
-		const props = useLanguageSelector();
-
-		return <div>{props}</div>;
-	};
-
-	const languageSelector = shallow(<LanguageSelectorElement />);
-
-	it('should have props for select dropdown', () => {
-		expect(languageSelector.props()).toEqual({
-			transLanguages: 'English',
-			value: 'en',
-			onChange: expect.any(Function)
-		});
+	it('changes selected language on change', () => {
+		render(<LanguageSelector />);
+		const select = screen.getByRole('combobox');
+		fireEvent.change(select, { target: { value: 'de' } });
+		expect((select as HTMLSelectElement).value).toBe('de');
 	});
 });

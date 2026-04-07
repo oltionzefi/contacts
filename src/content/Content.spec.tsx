@@ -1,15 +1,11 @@
-import React from 'react';
-import { ShallowWrapper, shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Content } from './Content';
 
 describe('Content', () => {
-	let content: ShallowWrapper;
-
-	beforeEach(() => {
-		content = shallow(<Content />);
-	});
-
 	it('renders content', () => {
-		expect(content.find('div').text()).toBe('Content');
+		render(<Content />);
+		expect(
+			screen.getByText('contacts.content.placeholder')
+		).toBeInTheDocument();
 	});
 });

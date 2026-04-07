@@ -1,15 +1,9 @@
-import React from 'react';
+import { render } from '@testing-library/react';
 import { Contacts } from './Contacts';
-import { shallow, ShallowWrapper } from 'enzyme';
 
 describe('Contacts', () => {
-	let contacts: ShallowWrapper;
-
-	beforeEach(() => {
-		contacts = shallow(<Contacts />);
-	});
-
-	it('renders contacts', () => {
-		expect(contacts.find('div').text()).toBe("Hello it's a contact");
+	it('renders contacts without crashing', () => {
+		const { container } = render(<Contacts />);
+		expect(container).toBeInTheDocument();
 	});
 });

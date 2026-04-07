@@ -4,22 +4,22 @@ import { KeyText } from '../types';
 export const languages: KeyText[] = [
 	{
 		key: 'en',
-		text: 'English'
+		text: 'English',
 	},
 	{
 		key: 'de',
-		text: 'German'
+		text: 'German',
 	},
 	{
 		key: 'fr',
-		text: 'French'
+		text: 'French',
 	},
 	{
 		key: 'es',
-		text: 'Spanish'
+		text: 'Spanish',
 	},
 	{
 		key: 'it',
-		text: 'Italian'
-	}
+		text: 'Italian',
+	},
 ];

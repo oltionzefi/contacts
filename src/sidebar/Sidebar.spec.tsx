@@ -1,15 +1,11 @@
-import React from 'react';
-import { ShallowWrapper, shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
-	let sidebar: ShallowWrapper;
-
-	beforeEach(() => {
-		sidebar = shallow(<Sidebar />);
-	});
-
 	it('renders sidebar', () => {
-		expect(sidebar.find('div').text()).toBe('Sidebar');
+		render(<Sidebar />);
+		expect(
+			screen.getByText('contacts.sidebar.placeholder')
+		).toBeInTheDocument();
 	});
 });

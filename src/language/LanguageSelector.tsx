@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { KeyText } from '../types';
 import i18n from '../i18n';
-import { languageService, languageQuery } from './state';
+import { useLanguageStore } from './state';
 import { languages } from './constants';
 import { translateFunction } from './functions';
 
@@ -10,7 +10,7 @@ export const LanguageSelector: React.FC = () => {
 	const { transLanguages, value, onChange } = useLanguageSelector();
 	return (
 		<>
-			<select onChange={e => onChange(e.target.value)} value={value}>
+			<select onChange={(e) => onChange(e.target.value)} value={value}>
 				{transLanguages.length &&
 					transLanguages.map((locale: KeyText) => {
 						return (
@@ -26,23 +26,19 @@ export const LanguageSelector: React.FC = () => {
 
 export const useLanguageSelector = () => {
 	const { t } = useTranslation();
-	const [language, setLanguage] = useState(languageQuery.getLanguage());
+	const language = useLanguageStore((state) => state.language);
+	const setLanguage = useLanguageStore((state) => state.setLanguage);
 
 	useEffect(() => {
-		if (language) {
-			if (languageQuery.getLanguage() !== language) {
-				languageService.setLanguage(language);
-			}
-			i18n.changeLanguage(language);
-		}
+		i18n.changeLanguage(language);
 	}, [language]);
 
 	const translateItems = translateFunction(t);
-	let transLanguages = translateItems(languages);
+	const transLanguages = translateItems(languages);
 
 	return {
 		transLanguages,
 		value: language,
-		onChange: setLanguage
+		onChange: setLanguage,
 	};
 };

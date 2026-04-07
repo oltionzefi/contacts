@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MessageBar, MessageBarButton, MessageBarType } from 'office-ui-fabric-react';
+import { MessageBar, MessageBarButton, MessageBarType } from '@fluentui/react';
 
-export const Message: React.SFC<{ status: boolean }> = ({ status }) => {
+export const Message: React.FC<{ status: boolean }> = ({ status }) => {
 	const { t } = useTranslation();
 	return (
 		<MessageBar
@@ -12,10 +12,14 @@ export const Message: React.SFC<{ status: boolean }> = ({ status }) => {
 					<MessageBarButton>No</MessageBarButton>
 				</div>
 			}
-			messageBarType={status ? MessageBarType.success : MessageBarType.error}
+			messageBarType={
+				status ? MessageBarType.success : MessageBarType.error
+			}
 			isMultiline={false}
 		>
-			{status ? t('contacts.upload.success') : t('contacts.upload.failed')}
+			{status
+				? t('contacts.upload.success')
+				: t('contacts.upload.failed')}
 		</MessageBar>
 	);
 };

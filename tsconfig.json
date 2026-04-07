@@ -1,37 +1,34 @@
 {
   "compilerOptions": {
     "outDir": "build/lib",
-    "target": "es5",
+    "target": "ES2020",
     "lib": [
-      "es5",
-      "es6",
-      "es7",
-      "es2017",
+      "ES2020",
       "dom",
       "dom.iterable"
     ],
+    "types": ["vite/client", "vitest/globals"],
     "sourceMap": true,
     "allowJs": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "node",
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": false,
     "rootDirs": [
       "src"
     ],
     "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"]
+    },
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "strictNullChecks": true,
-    "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true,
     "declaration": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "esModuleInterop": true,
     "strict": true,
     "resolveJsonModule": true,

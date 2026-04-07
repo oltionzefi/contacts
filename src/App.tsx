@@ -1,11 +1,10 @@
 import React, { Suspense } from 'react';
 import './App.css';
-import { initializeIcons, loadTheme } from 'office-ui-fabric-react';
+import { initializeIcons, loadTheme } from '@fluentui/react';
 import { Container } from './Container';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Contact, Contacts } from './contacts';
 import { Upload } from './upload';
-import { akitaDevtools, persistState } from '@datorama/akita';
 
 /**
  * Loading the theme
@@ -13,15 +12,15 @@ import { akitaDevtools, persistState } from '@datorama/akita';
  */
 loadTheme({
 	palette: {
-		themePrimary: '#ddd000',
-		themeLighterAlt: '#eff6fc',
-		themeLighter: '#deecf9',
-		themeLight: '#c7e0f4',
-		themeTertiary: '#71afe5',
-		themeSecondary: '#2b88d8',
-		themeDarkAlt: '#106ebe',
-		themeDark: '#005a9e',
-		themeDarker: '#004578',
+		themePrimary: '#2563EB',
+		themeLighterAlt: '#eff6ff',
+		themeLighter: '#dbeafe',
+		themeLight: '#bfdbfe',
+		themeTertiary: '#60a5fa',
+		themeSecondary: '#3b82f6',
+		themeDarkAlt: '#1d4ed8',
+		themeDark: '#1e40af',
+		themeDarker: '#1e3a8a',
 		neutralLighterAlt: '#f8f8f8',
 		neutralLighter: '#f4f4f4',
 		neutralLight: '#eaeaea',
@@ -34,8 +33,8 @@ loadTheme({
 		neutralPrimary: '#333333',
 		neutralDark: '#272727',
 		black: '#1d1d1d',
-		white: '#ffffff'
-	}
+		white: '#ffffff',
+	},
 });
 
 /**
@@ -44,26 +43,22 @@ loadTheme({
  */
 initializeIcons();
 
-akitaDevtools();
-
-persistState({
-	include: ['language', 'contacts']
-});
-
-class App extends React.Component {
-	render() {
-		return (
-			<Container>
-				<BrowserRouter>
-					<Suspense fallback={<div>Loading... </div>}>
-						<Route path="/" exact component={Contacts} />
-						<Route path="/new" component={Contact} />
-						<Route path="/upload" component={Upload} />
-					</Suspense>
-				</BrowserRouter>
-			</Container>
-		);
-	}
-}
+const App: React.FC = () => (
+	<Container>
+		<BrowserRouter
+			future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
+		>
+			<Suspense
+				fallback={<div className="loading-fallback">Loading…</div>}
+			>
+				<Routes>
+					<Route path="/" element={<Contacts />} />
+					<Route path="/new" element={<Contact />} />
+					<Route path="/upload" element={<Upload />} />
+				</Routes>
+			</Suspense>
+		</BrowserRouter>
+	</Container>
+);
 
 export default App;

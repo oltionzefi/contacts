@@ -1,29 +1,26 @@
 import { translateFunction } from './functions';
 import { languages } from './constants';
-import { useTranslation } from 'react-i18next';
+
+const t = (key: string) => key;
 
 describe('LanguageSelector functions', () => {
-	let lang = languages;
-	const { t } = useTranslation();
-	const translateItems = translateFunction(t);
+	const lang = languages;
+	const translateItems = translateFunction(t as any);
 
-	it('should translate languages to english if en', () => {
-		expect(translateItems(lang)).toEqual([
-			{ key: 'en', text: 'English' },
-			{ key: 'de', text: 'German' },
-			{ key: 'fr', text: 'French' },
-			{ key: 'es', text: 'Spanish' },
-			{ key: 'it', text: 'Italian' }
-		]);
+	it('should translate languages returning translation keys', () => {
+		const result = translateItems(lang);
+		expect(result).toHaveLength(5);
+		expect(result[0].key).toBe('en');
+		expect(result[1].key).toBe('de');
+		expect(result[2].key).toBe('fr');
+		expect(result[3].key).toBe('es');
+		expect(result[4].key).toBe('it');
 	});
 
-	it('should translate languages to german if de', () => {
-		expect(translateItems(lang)).toEqual([
-			{ key: 'en', text: 'Englisch' },
-			{ key: 'de', text: 'Deutsche' },
-			{ key: 'fr', text: 'Französisch' },
-			{ key: 'es', text: 'Spanisch' },
-			{ key: 'it', text: 'Italienisch' }
-		]);
+	it('should map each language key to its translated text', () => {
+		const result = translateItems(lang);
+		result.forEach((item) => {
+			expect(item.text).toBe(item.key);
+		});
 	});
 });

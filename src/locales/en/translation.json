@@ -41,5 +41,10 @@
 	"contacts.upload.drag.action": "Drag a file here",
 	"contact.upload.file.none": "Nothing to display",
 	"contacts.upload.success": "File was uploaded successfully",
-	"contacts.upload.failed": "File upload failed"
+	"contacts.upload.failed": "File upload failed",
+	"contacts.contacts.empty.title": "No contacts yet",
+	"contacts.contacts.empty.description": "Add your first contact using the New button above",
+	"contacts.contacts.submit.success": "Contact saved!",
+	"contacts.contacts.firstname.required": "First name is required",
+	"contacts.menu.main.home": "Contacts"
 }

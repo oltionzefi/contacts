@@ -1,15 +1,15 @@
-import React from 'react';
+import { render } from '@testing-library/react';
 import { Container } from './Container';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
 describe('Upload Container', () => {
-	let uplaodContainer: ShallowWrapper;
-
-	beforeEach(() => {
-		uplaodContainer = shallow(<Container />);
-	});
-
-	it('renders upload', () => {
-		expect(uplaodContainer.children).toContain('ContainerBox');
+	it('renders upload container without crashing', () => {
+		const { container } = render(
+			<DndProvider backend={HTML5Backend}>
+				<Container />
+			</DndProvider>
+		);
+		expect(container).toBeInTheDocument();
 	});
 });

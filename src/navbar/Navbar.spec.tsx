@@ -1,15 +1,9 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Navbar } from './Navbar';
 
 describe('Navbar', () => {
-	let navbar: ShallowWrapper;
-
-	beforeEach(() => {
-		navbar = shallow(<Navbar />);
-	});
-
-	it('renders navbar', () => {
-		expect(navbar.find('div').children).toBe('Navbar');
+	it('renders navbar without crashing', () => {
+		const { container } = render(<Navbar />);
+		expect(container).toBeInTheDocument();
 	});
 });

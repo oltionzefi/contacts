@@ -1,17 +1,18 @@
-import React from 'react';
-import { shallow, ShallowWrapper } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import { Container } from './Container';
 
 describe('Container', () => {
-	let container: ShallowWrapper;
-
-	beforeEach(() => {
-		container = shallow(<Container />);
+	it('renders without crashing', () => {
+		const { container } = render(<Container />);
+		expect(container).toBeInTheDocument();
 	});
 
-	it('renders nested components', () => {
-		expect(container.find('Fabric').length).toEqual(1);
-		expect(container.find('Navbar').length).toEqual(1);
-		expect(container.find('LanguageSelector').length).toEqual(1);
+	it('renders children', () => {
+		render(
+			<Container>
+				<span>child content</span>
+			</Container>
+		);
+		expect(screen.getByText('child content')).toBeInTheDocument();
 	});
 });

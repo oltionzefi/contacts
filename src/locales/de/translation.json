@@ -41,5 +41,10 @@
 	"contacts.upload.drag.action": "Ziehen Sie eine Datei hierher",
 	"contact.upload.file.none": "Nichts zu zeigen",
 	"contacts.upload.success": "Die Datei wurde erfolgreich hochgeladen",
-	"contacts.upload.failed": "Datei-Upload fehlgeschlagen"
+	"contacts.upload.failed": "Datei-Upload fehlgeschlagen",
+	"contacts.contacts.empty.title": "Noch keine Kontakte",
+	"contacts.contacts.empty.description": "Neuen Kontakt über die Schaltfläche Neu hinzufügen",
+	"contacts.contacts.submit.success": "Kontakt gespeichert!",
+	"contacts.contacts.firstname.required": "Vorname ist erforderlich",
+	"contacts.menu.main.home": "Kontakte"
 }

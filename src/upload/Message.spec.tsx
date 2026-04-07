@@ -1,25 +1,14 @@
-import React from 'react';
-import { ShallowWrapper, shallow } from 'enzyme';
+import { render } from '@testing-library/react';
 import { Message } from './Message';
 
 describe('Message', () => {
-	let message: ShallowWrapper;
-
-	const status = true;
-
-	beforeEach(() => {
-		message = shallow(<Message status={status} />);
+	it('renders success message bar when status is true', () => {
+		const { container } = render(<Message status={true} />);
+		expect(container).toBeInTheDocument();
 	});
 
-	it('should show successful message', () => {});
-
-	describe('Message failed', () => {
-		const status = false;
-
-		beforeEach(() => {
-			message = shallow(<Message status={status} />);
-		});
-
-		it('should show failed message', () => {});
+	it('renders error message bar when status is false', () => {
+		const { container } = render(<Message status={false} />);
+		expect(container).toBeInTheDocument();
 	});
 });

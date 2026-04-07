@@ -98,7 +98,7 @@ const GridViewIcon: React.FC = () => (
 /* ─── Infinite scroll sentinel ─── */
 const useInfiniteScroll = (
 	items: Contact[],
-	filterName: string | undefined
+	filterName: string | undefined,
 ) => {
 	// Track the filter alongside count so we can reset atomically during render
 	const [{ visibleCount, lastFilter }, setScrollState] = useState({
@@ -117,7 +117,7 @@ const useInfiniteScroll = (
 			...prev,
 			visibleCount: Math.min(
 				prev.visibleCount + PAGE_SIZE,
-				items.length + PAGE_SIZE
+				items.length + PAGE_SIZE,
 			),
 		}));
 	}, [items.length]);
@@ -129,7 +129,7 @@ const useInfiniteScroll = (
 			([entry]) => {
 				if (entry.isIntersecting) loadMore();
 			},
-			{ threshold: 0, rootMargin: '120px' }
+			{ threshold: 0, rootMargin: '120px' },
 		);
 		observer.observe(el);
 		return () => observer.disconnect();
@@ -149,7 +149,7 @@ export const Contacts: React.FC = () => {
 		useContacts();
 	const { visibleContacts, hasMore, sentinelRef } = useInfiniteScroll(
 		contacts,
-		filterName
+		filterName,
 	);
 
 	const collectionClass =

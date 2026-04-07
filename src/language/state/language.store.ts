@@ -15,6 +15,6 @@ export const useLanguageStore = create<LanguageState>()(
 			setLanguage: (lang: string) => set({ language: lang }),
 			getLanguage: () => get().language,
 		}),
-		{ name: 'language' }
-	)
+		{ name: 'language' },
+	),
 );

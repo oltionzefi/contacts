@@ -5,7 +5,7 @@ describe('Content', () => {
 	it('renders content', () => {
 		render(<Content />);
 		expect(
-			screen.getByText('contacts.content.placeholder')
+			screen.getByText('contacts.content.placeholder'),
 		).toBeInTheDocument();
 	});
 });

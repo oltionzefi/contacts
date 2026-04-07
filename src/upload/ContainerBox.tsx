@@ -37,7 +37,8 @@ export const ContainerBox: React.FC<TargetBoxProps> = (props) => {
 		.join(' ');
 
 	return (
-		<div ref={drop} className={dropClass}>
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		<div ref={drop as any} className={dropClass}>
 			{isActive
 				? t('contacts.upload.release.action')
 				: t('contacts.upload.drag.action')}

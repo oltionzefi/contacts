@@ -42,7 +42,6 @@ i18n.use(Fetch)
 		interpolation: {
 			escapeValue: false,
 		},
-		initImmediate: false,
 	});
 
 export default i18n;

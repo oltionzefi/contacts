@@ -12,7 +12,7 @@ interface ContactsState {
 	add: (contact: Contact) => void;
 	update: (
 		id: ContactID | string | number | undefined,
-		contact: Contact
+		contact: Contact,
 	) => void;
 	remove: (id: ContactID) => void;
 	getActiveContacts: () => Contact[];
@@ -31,17 +31,17 @@ export const useContactsStore = create<ContactsState>()(
 					contacts: state.contacts.map((c) =>
 						c.id === String(id)
 							? { ...c, ...getContactData(contact) }
-							: c
+							: c,
 					),
 				})),
 			remove: (id: ContactID) =>
 				set((state) => ({
 					contacts: state.contacts.map((c) =>
-						c.id === id ? { ...c, deleted: true } : c
+						c.id === id ? { ...c, deleted: true } : c,
 					),
 				})),
 			getActiveContacts: () => get().contacts.filter((c) => !c.deleted),
 		}),
-		{ name: 'contacts' }
-	)
+		{ name: 'contacts' },
+	),
 );
